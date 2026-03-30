@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HiveMaster</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-layout { display: flex; min-height: 100vh; background-color: var(--bg-alt); }
+        .dashboard-sidebar { width: 280px; background-color: var(--card-bg); border-inline-end: 1px solid var(--border-color); display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 40; transition: transform 0.3s ease; }
+        .sidebar-header { height: 80px; display: flex; align-items: center; padding-inline: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .sidebar-nav { flex: 1; padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; overflow-y: auto; }
+        .sidebar-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; color: var(--text-muted); border-radius: var(--radius-md); font-weight: 500; transition: var(--transition); text-decoration: none; cursor: pointer; }
+        .sidebar-link:hover, .sidebar-link.active { background-color: var(--primary-color); color: #fff; }
+        .sidebar-footer { padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem; }
+        
+        .dashboard-main { flex: 1; margin-inline-start: 280px; min-width: 0; display: flex; flex-direction: column; }
+        .dashboard-header { height: 80px; background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; position: sticky; top: 0; z-index: 30; }
+        .dashboard-content { padding: 2rem; flex: 1; }
+        
+        .metric-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+        .metric-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(245, 158, 11, 0.1); color: var(--primary-color); flex-shrink: 0; }
+        .metric-info h3 { margin: 0; font-size: 0.875rem; color: var(--text-muted); font-weight: 500; }
+        .metric-info p { margin: 0; font-size: 1.5rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 0.25rem; }
+
+        @media (max-width: 1023px) {
+            .dashboard-sidebar { transform: translateX(-100%); }
+            [dir="rtl"] .dashboard-sidebar { transform: translateX(100%); }
+            .dashboard-sidebar.show { transform: translateX(0); }
+            .dashboard-main { margin-inline-start: 0; }
+        }
+        
+        .toggle-btn-container { display: flex; flex-direction: column; gap: 0.5rem; }
+        .toggle-btn-container button { width: 100%; justify-content: flex-start; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <i data-lucide="hexagon" class="logo-icon"></i>
+                    <span>HiveMaster</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active">
+                    <i data-lucide="layout-dashboard" style="width:20px;"></i>
+                    Overview
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i data-lucide="shopping-bag" style="width:20px;"></i>
+                    Orders
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i data-lucide="activity" style="width:20px;"></i>
+                    Hive Health Reports
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i data-lucide="play-circle" style="width:20px;"></i>
+                    Tutorials
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i data-lucide="settings" style="width:20px;"></i>
+                    Settings
+                </a>
+                
+                <!-- Utilities -->
+                <div class="toggle-btn-container" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                    <button class="sidebar-link dark-toggle" style="background:none; border:none; width:100%; text-align:left; color:var(--text-muted);">
+                        <i data-lucide="moon" style="width:20px;"></i> Dark Mode
+                    </button>
+                    <button class="sidebar-link rtl-toggle" style="background:none; border:none; width:100%; text-align:left; color:var(--text-muted);">
+                        <i data-lucide="languages" style="width:20px;"></i> Toggle RTL
+                    </button>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="flex items-center gap-3">
+                    <img src="https://placehold.co/40x40/f59e0b/1f2937?text=JD" alt="User" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                    <div style="flex:1; min-width:0;">
+                        <h4 style="margin:0; font-size:0.875rem; color:var(--text-main); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Jane Doe</h4>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">Hobbyist Digital</p>
+                    </div>
+                </div>
+                <!-- Logout redirects to Home -->
+                <button id="logoutBtn" class="btn btn-outline" style="width:100%; border-color:var(--border-color); color:var(--text-muted); justify-content:center;">
+                    <i data-lucide="log-out" style="width:16px;"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="flex items-center gap-4">
+                    <button id="dashboardMenuBtn" class="btn-icon" style="display:none;" aria-label="Toggle Sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h2 style="margin:0; font-size:1.25rem;">Overview</h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="btn-icon" style="position:relative;">
+                        <i data-lucide="bell"></i>
+                        <span style="position:absolute; top:4px; right:4px; width:8px; height:8px; background:var(--primary-color); border-radius:50%;"></span>
+                    </button>
+                    <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">New Inspection</a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div style="margin-bottom: 2rem;">
+                    <h1 style="font-size:1.75rem; margin-bottom:0.5rem;">Welcome back, Jane! 👋</h1>
+                    <p style="color:var(--text-muted); margin:0;">Here's what's happening in your apiary today.</p>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="grid grid-cols-4 gap-6" style="margin-bottom: 3rem;">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i data-lucide="archive"></i></div>
+                        <div class="metric-info">
+                            <h3>Active Hives</h3>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color:#10b981; background:rgba(16,185,129,0.1);"><i data-lucide="activity"></i></div>
+                        <div class="metric-info">
+                            <h3>Colony Health</h3>
+                            <p>Good</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color:#8b5cf6; background:rgba(139,92,246,0.1);"><i data-lucide="calendar-check"></i></div>
+                        <div class="metric-info">
+                            <h3>Last Inspection</h3>
+                            <p>3 days ago</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color:#ef4444; background:rgba(239,68,68,0.1);"><i data-lucide="alert-triangle"></i></div>
+                        <div class="metric-info">
+                            <h3>Tasks Due</h3>
+                            <p>1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Panels -->
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Recent Reports -->
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="flex items-center justify-between" style="margin-bottom: 1.5rem;">
+                            <h3 style="margin:0; font-size:1.25rem;">Recent Hive Reports</h3>
+                            <a href="#" class="text-primary" style="font-size:0.875rem; font-weight:500;">View All</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div style="display:flex; align-items:flex-start; gap:1rem; padding-bottom:1rem; border-bottom:1px solid var(--border-color);">
+                                <div style="width:40px; height:40px; background:var(--bg-alt); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">
+                                    <i data-lucide="file-text" style="color:var(--text-muted);"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin:0 0 0.25rem; font-size:1rem;">Hive #1 - Spring Inspection</h4>
+                                    <p style="margin:0; color:var(--text-muted); font-size:0.875rem;">Queen spotted. Strong brood pattern. Added 1:1 syrup.</p>
+                                    <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:0.25rem;">May 10, 2026</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:flex-start; gap:1rem; padding-bottom:1rem;">
+                                <div style="width:40px; height:40px; background:var(--bg-alt); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">
+                                    <i data-lucide="file-text" style="color:var(--text-muted);"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin:0 0 0.25rem; font-size:1rem;">Hive #2 - Mite Check</h4>
+                                    <p style="margin:0; color:var(--text-muted); font-size:0.875rem;">Alcohol wash showed 1 mite / 300 bees. Below threshold.</p>
+                                    <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:0.25rem;">May 05, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Tutorials -->
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="flex items-center justify-between" style="margin-bottom: 1.5rem;">
+                            <h3 style="margin:0; font-size:1.25rem;">Continue Learning</h3>
+                        </div>
+                        <div style="position:relative; border-radius:var(--radius-md); overflow:hidden; margin-bottom:1rem;">
+                            <img src="https://placehold.co/600x300/f59e0b/1f2937?text=Video+Thumbnail" alt="Video" style="width:100%; display:block;">
+                            <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
+                                <button class="btn-icon" style="background:var(--primary-color); color:#fff; width:56px; height:56px;"><i data-lucide="play" style="width:24px; height:24px; margin-left:4px;"></i></button>
+                            </div>
+                        </div>
+                        <h4 style="margin:0 0 0.5rem; font-size:1rem;">Module 3: Swarm Prevention Strategies</h4>
+                        <div style="background:var(--bg-alt); height:6px; border-radius:3px; overflow:hidden; margin-bottom:0.5rem;">
+                            <div style="background:var(--primary-color); width:40%; height:100%;"></div>
+                        </div>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">40% complete • 12 mins left</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Dashboard Logic -->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- Include main toggle logic -->
+    <script src="assets/js/main.js"></script>
+    <style>
+        /* Mobile dashboard tweaks */
+        @media (max-width: 1023px) {
+            #dashboardMenuBtn { display: block !important; }
+            .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
+            .grid-cols-2 { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+            .grid-cols-4 { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>

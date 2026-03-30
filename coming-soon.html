@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - HiveMaster</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .auth-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem 1rem; position: relative; }
+        .auth-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0.1; }
+        .auth-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: -1; }
+    </style>
+</head>
+<body class="bg-alt">
+
+    <div class="auth-container">
+        <!-- Background elements -->
+        <div class="auth-overlay"></div>
+        <img src="https://placehold.co/1920x1080/f59e0b/1f2937?text=Honeycomb+Pattern" alt="Background" class="auth-bg">
+
+        <div class="auth-card" style="max-width: 600px; text-align: center; padding: 4rem 3rem;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem; font-size: 2.5rem;">
+                <i data-lucide="hexagon" class="logo-icon" style="width: 40px; height: 40px;"></i>
+                <span>HiveMaster</span>
+            </a>
+            
+            <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">We're Launching Soon</h1>
+            <p class="section-subtitle" style="margin-bottom: 2.5rem;">The next generation platform for beekeeping education and supplies is currently under construction. Get notified when we go live.</p>
+
+            <form onsubmit="event.preventDefault()" style="display: flex; gap: 0.5rem; max-width: 400px; margin: 0 auto 2rem;">
+                <input type="email" placeholder="Enter your email" required style="flex: 1;">
+                <button type="submit" class="btn btn-primary">Notify Me</button>
+            </form>
+
+            <div class="footer-socials" style="justify-content: center; margin-bottom: 2rem; margin-top: 0;">
+                <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            </div>
+
+            <div class="text-center">
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode" style="background: var(--bg-alt); margin-right: 0.5rem;"><i data-lucide="moon"></i></button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL" style="background: var(--bg-alt);"><i data-lucide="languages"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

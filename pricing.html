@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - HiveMaster</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header { background-color: var(--bg-alt); padding-block: 6rem 4rem; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .pricing-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 3rem 2rem; display: flex; flex-direction: column; height: 100%; position: relative; transition: var(--transition); }
+        .pricing-card.popular { border-color: var(--primary-color); border-width: 2px; box-shadow: var(--shadow-lg); transform: translateY(-10px); }
+        .popular-badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--primary-color); color: #fff; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; font-weight: bold; }
+        .pricing-price { font-size: 3rem; font-weight: 800; color: var(--text-main); margin-block: 1.5rem; }
+        .pricing-price span { font-size: 1rem; color: var(--text-muted); font-weight: normal; }
+        .pricing-features { margin-bottom: 2.5rem; flex-grow: 1; }
+        .pricing-features li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; color: var(--text-muted); }
+        .pricing-features i { color: var(--primary-color); flex-shrink: 0; margin-top: 0.25rem; }
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1rem; }
+        .faq-question { font-weight: 600; font-size: 1.125rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+        .faq-answer { color: var(--text-muted); margin-top: 1rem; display: none; }
+        /* Simple hack for faq open state (not strictly needed but good for visual) */
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active i { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="hexagon" class="logo-icon"></i>
+                <span>HiveMaster</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon dark-toggle"><i data-lucide="moon"></i></button>
+                <button class="btn-icon rtl-toggle"><i data-lucide="languages"></i></button>
+                <div class="nav-auth flex gap-4">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header Section 1: Hero -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title">Membership & Starter Kits</h1>
+            <p class="hero-subtitle">Choose the plan that fits your apiary goals. From curious hobbyists to commercial producers.</p>
+        </div>
+    </header>
+
+    <!-- Section 2: Pricing Plans -->
+    <section class="section-padding">
+        <div class="container">
+            <!-- 3 Pricing Cards -->
+            <div class="card-grid cols-3" style="gap: 2rem; align-items: center;">
+                
+                <!-- Plan 1 -->
+                <div class="pricing-card">
+                    <h3 class="card-title">Hobbyist Digital</h3>
+                    <p class="card-desc">Perfect for beginners looking for education before buying physical hives.</p>
+                    <div class="pricing-price">$19<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Access to Beekeeping 101 Video Course</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Monthly live Q&A sessions</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Digital hive logging tools</li>
+                        <li style="opacity: 0.5;"><i data-lucide="x-circle" style="width:20px;"></i> No physical equipment</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Start Free Trial</a>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="pricing-card popular" style="background: var(--bg-alt);">
+                    <div class="popular-badge">Most Popular</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3 class="card-title" style="margin:0;">Backyard Bundle</h3>
+                        <i data-lucide="star" style="color:var(--primary-color);"></i>
+                    </div>
+                    <p class="card-desc mt-2">Everything you need to successfully start your first 2 hives.</p>
+                    <div class="pricing-price" style="color: var(--primary-color);">$495<span>/setup</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Two complete 10-frame Langstroth hives</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Premium ventilated suit and tools</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> 1-year Hobbyist Digital access included</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Guaranteed bee package delivery reservation</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Priority email support for first 90 days</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Choose Bundle</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card">
+                    <h3 class="card-title">Pro Apiarist</h3>
+                    <p class="card-desc">Advanced software, wholesale pricing, and expert consulting for growing operations.</p>
+                    <div class="pricing-price">$99<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Advanced Queen Rearing masterclass</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Wholesale pricing on physical supplies (20% off)</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> 1-on-1 monthly consulting call (30 min)</li>
+                        <li><i data-lucide="check-circle-2" style="width:20px;"></i> Unlimited hive logging in dashboard</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Upgrade to Pro</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Feature Details -->
+    <section class="section-padding bg-alt">
+        <div class="container text-center">
+            <h2 class="section-title">The HiveMaster Difference</h2>
+            <p class="section-subtitle">Why thousands of beekeepers choose our platform.</p>
+            <div class="grid grid-cols-3 gap-8 text-left">
+                <div>
+                    <i data-lucide="layout-dashboard" class="text-primary" style="width:40px;height:40px;margin-bottom:1rem;"></i>
+                    <h3 style="font-size: 1.25rem;">Proprietary Dashboard</h3>
+                    <p style="color: var(--text-muted);">Track honey yields, medication schedules, and colony temperament natively within our system.</p>
+                </div>
+                <div>
+                    <i data-lucide="graduation-cap" class="text-primary" style="width:40px;height:40px;margin-bottom:1rem;"></i>
+                    <h3 style="font-size: 1.25rem;">Certified Curriculum</h3>
+                    <p style="color: var(--text-muted);">Our online courses are reviewed by university entomology departments for scientific accuracy.</p>
+                </div>
+                <div>
+                    <i data-lucide="package-check" class="text-primary" style="width:40px;height:40px;margin-bottom:1rem;"></i>
+                    <h3 style="font-size: 1.25rem;">Free Shipping on Kits</h3>
+                    <p style="color: var(--text-muted);">Heavy woodenware can be expensive to ship. With our bundle, palletized shipping is on us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section class="section-padding">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Got questions? We've got answers.</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Are live bees included in the Backyard Bundle?</span>
+                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No, live bees (packages or nucs) are sold separately due to seasonal agricultural shipping restrictions. However, purchasing the bundle gives you priority access to reserve our spring bee packages.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I cancel my digital membership at any time?</span>
+                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
+                    </div>
+                    <div class="faq-answer" style="display:block;">
+                        Yes, our monthly subscriptions can be canceled at any time from your dashboard settings. You will retain access until the end of your billing cycle.
+                    </div>
+                </div>
+                <!-- Need JS or simple CSS for toggle, using JS in HTML logic or assume it is open -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer discounts for bulk physical orders?</span>
+                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
+                    </div>
+                    <div class="faq-answer" style="display:block;">
+                        Yes! If you are a Pro Apiarist member, you automatically receive a 20% discount on all physical woodenware and protective gear.
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Quick inline JS for FAQ toggle since we don't want to overcomplicate main.js
+                document.querySelectorAll('.faq-question').forEach(item => {
+                    item.addEventListener('click', event => {
+                        const parent = item.parentElement;
+                        const answer = parent.querySelector('.faq-answer');
+                        const icon = parent.querySelector('i');
+                        if (answer.style.display === 'block') {
+                            answer.style.display = 'none';
+                            icon.style.transform = 'rotate(0deg)';
+                        } else {
+                            answer.style.display = 'block';
+                            icon.style.transform = 'rotate(180deg)';
+                        }
+                    })
+                })
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1.5rem;">
+                        <i data-lucide="hexagon" class="logo-icon"></i>
+                        <span>HiveMaster</span>
+                    </a>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog & Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Contact Us</h3>
+                    <ul>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HiveMaster Beekeeping Education & Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <style>
+        @media (max-width: 1023px) {
+            .pricing-card.popular { transform: none; box-shadow: none; border-color: var(--border-color); }
+        }
+        @media (max-width: 767px) {
+            .grid-cols-3 { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HiveMaster</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header { background-color: var(--bg-alt); padding-block: 6rem 4rem; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .contact-info-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+        .contact-info-card i { width: 48px; height: 48px; color: var(--primary-color); margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="hexagon" class="logo-icon"></i>
+                <span>HiveMaster</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon dark-toggle"><i data-lucide="moon"></i></button>
+                <button class="btn-icon rtl-toggle"><i data-lucide="languages"></i></button>
+                <div class="nav-auth flex gap-4">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header Section 1: Hero -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-subtitle">Whether you have a question about our educational courses or need help with an order, we're here to help.</p>
+        </div>
+    </header>
+
+    <!-- Section 2: Contact Info Cards -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid grid-cols-3 gap-8">
+                <div class="contact-info-card">
+                    <i data-lucide="map-pin"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Visit Our Apiary</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">123 Apiary Lane<br>Austin, TX 78704</p>
+                </div>
+                <div class="contact-info-card">
+                    <i data-lucide="phone"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Call Us</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">Main: +1 (555) 123-4567<br>Support: +1 (555) 987-6543</p>
+                </div>
+                <div class="contact-info-card">
+                    <i data-lucide="mail"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Email Us</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">support@hivemaster.com<br>info@hivemaster.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Contact Form -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="flex items-center justify-center">
+                <div class="card" style="width: 100%; max-width: 800px; padding: 4rem;">
+                    <div class="text-center" style="margin-bottom: 3rem;">
+                        <h2 class="section-title">Send a Message</h2>
+                        <p class="section-subtitle" style="margin-bottom: 0;">Our support team typically replies within 24 hours.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault()">
+                        <div class="grid grid-cols-2 gap-4" style="margin-bottom: 1.5rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name *</label>
+                                <input type="text" placeholder="John" required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name *</label>
+                                <input type="text" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4" style="margin-bottom: 1.5rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
+                                <input type="email" placeholder="john@example.com" required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                                <input type="tel" placeholder="(555) 123-4567">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject</label>
+                            <select>
+                                <option>General Inquiry</option>
+                                <option>Order Support</option>
+                                <option>Course Questions</option>
+                                <option>Consulting Request</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Message *</label>
+                            <textarea rows="6" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Map -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h2 class="section-title">Find Us</h2>
+            </div>
+            <!-- Placeholder Map via iframe using OpenStreetMap or similar, here 100% width div styling as placeholder, wait, user wants an iframe -->
+            <div style="width: 100%; aspect-ratio: 21/9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-97.80214309692384%2C30.22858564073341%2C-97.69742965698244%2C30.301321049969018&amp;layer=mapnik" 
+                    style="border: none;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1.5rem;">
+                        <i data-lucide="hexagon" class="logo-icon"></i>
+                        <span>HiveMaster</span>
+                    </a>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog & Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Contact Us</h3>
+                    <ul>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HiveMaster Beekeeping Education & Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <style>
+        @media (max-width: 991px) {
+            .grid-cols-3 { grid-template-columns: 1fr; gap: 2rem; }
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .card { padding: 2rem !important; }
+        }
+    </style>
+</body>
+</html>

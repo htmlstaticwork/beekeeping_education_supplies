@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 - Premium Beekeeping Platform</title>
+    <meta name="description" content="Advanced beekeeping strategies and premium equipment.">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Home 2 specific styles */
+        .hero-2 {
+            padding-block: 8rem 6rem;
+            background: linear-gradient(to right, var(--bg-color) 40%, var(--bg-alt) 40%);
+        }
+        [dir="rtl"] .hero-2 {
+            background: linear-gradient(to left, var(--bg-color) 40%, var(--bg-alt) 40%);
+        }
+        @media (max-width: 991px) {
+            .hero-2 { background: var(--bg-alt); padding-block: 5rem; text-align: center; }
+            .hero-stats { justify-content: center; }
+        }
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <i data-lucide="hexagon" class="logo-icon"></i>
+                <span>HiveMaster</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <div class="nav-auth flex gap-4">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Alternate Hero Section -->
+    <section class="hero-2">
+        <div class="container">
+            <div class="grid grid-cols-2 items-center gap-8">
+                <div class="hero-content">
+                    <div style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.1); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem;">
+                        #1 Rated Beekeeping Platform
+                    </div>
+                    <h1 class="hero-title">Elevate Your Apiary Management</h1>
+                    <p class="hero-subtitle">Pro-grade supplies and masterclass training designed for ambitious beekeepers aiming for maximum yield.</p>
+                    <div class="flex gap-4 hero-stats" style="margin-bottom:2.5rem;">
+                        <div>
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); display:block;">15k+</span>
+                            <span style="color:var(--text-muted); font-size:0.875rem;">Active Users</span>
+                        </div>
+                        <div style="width:1px; background:var(--border-color); margin:0 1rem;"></div>
+                        <div>
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); display:block;">200+</span>
+                            <span style="color:var(--text-muted); font-size:0.875rem;">Video Classes</span>
+                        </div>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="services.html" class="btn btn-primary">Start Free Trial <i data-lucide="play-circle"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://placehold.co/800x800/e5e7eb/1f2937?text=Professional+Beekeeper+in+Action" alt="Professional Beekeeper" style="border-radius: 50% 50% 0 0; border: 8px solid var(--bg-color);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Trust Indicators / Stats (Different from Home 1) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Trusted by Professionals Worldwide</h2>
+                <p class="section-subtitle">Our equipment and education is used in over 120 countries, turning hobbyists into commercial success stories.</p>
+            </div>
+            <div class="card-grid cols-4">
+                <div class="stat-card">
+                    <i data-lucide="globe-2" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">120+</h3>
+                    <p style="margin:0; font-weight:500;">Countries Reached</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="award" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">50+</h3>
+                    <p style="margin:0; font-weight:500;">Industry Awards</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="users-2" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">98%</h3>
+                    <p style="margin:0; font-weight:500;">Customer Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="sprout" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">5M+</h3>
+                    <p style="margin:0; font-weight:500;">Bees Saved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Best Sellers Preview (Different from Home 1 Categories) -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="flex items-center justify-between" style="margin-bottom: 3rem; flex-wrap:wrap; gap:1rem;">
+                <div>
+                    <h2 class="section-title" style="margin-bottom:0;">Trending Supplies</h2>
+                    <p class="section-subtitle" style="margin-bottom:0;">The most highly-rated equipment by our top apiarists.</p>
+                </div>
+                <a href="#" class="btn btn-outline">View Entire Store</a>
+            </div>
+            <!-- 4 Cards -->
+            <div class="card-grid cols-4">
+                <div class="card">
+                    <div class="card-img-wrapper" style="position:relative;">
+                        <span style="position:absolute; top:1rem; left:1rem; background:var(--primary-color); color:#fff; padding:0.25rem 0.75rem; border-radius:1rem; font-size:0.75rem; font-weight:bold; z-index:10;">Best Seller</span>
+                        <img src="https://placehold.co/400x400/fff/1f2937?text=Pro+Suit" alt="Ventilated Suit" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Aero-Vent Pro Suit</h3>
+                        <p class="card-desc">Advanced 3-layer ventilated suit for maximum sting protection.</p>
+                        <div class="card-footer" style="padding-top:1rem; border-top:1px solid var(--border-color);">
+                            <span style="font-weight:700; font-size:1.25rem;">$129.99</span>
+                            <button class="btn-icon bg-alt"><i data-lucide="shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://placehold.co/400x400/fff/1f2937?text=Smoker" alt="Smoker" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Stainless Steel Smoker</h3>
+                        <p class="card-desc">Heat shield and premium leather bellows for smooth operation.</p>
+                        <div class="card-footer" style="padding-top:1rem; border-top:1px solid var(--border-color);">
+                            <span style="font-weight:700; font-size:1.25rem;">$34.50</span>
+                            <button class="btn-icon bg-alt"><i data-lucide="shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://placehold.co/400x400/fff/1f2937?text=Pine+Hive" alt="Pine Hive" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">10-Frame Pine Hive Kit</h3>
+                        <p class="card-desc">Includes bottom board, deeply supers, frames, and foundation.</p>
+                        <div class="card-footer" style="padding-top:1rem; border-top:1px solid var(--border-color);">
+                            <span style="font-weight:700; font-size:1.25rem;">$195.00</span>
+                            <button class="btn-icon bg-alt"><i data-lucide="shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://placehold.co/400x400/fff/1f2937?text=Hive+Tool" alt="Hive Tool" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">J-Hook Hive Tool</h3>
+                        <p class="card-desc">Ergonomic grip, perfectly angled for prying heavy honey supers.</p>
+                        <div class="card-footer" style="padding-top:1rem; border-top:1px solid var(--border-color);">
+                            <span style="font-weight:700; font-size:1.25rem;">$14.99</span>
+                            <button class="btn-icon bg-alt"><i data-lucide="shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Meet the Mentors (Different from Home 1 Let's Get Started) -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title">Learn from Master Apiarists</h2>
+            <p class="section-subtitle">Our instructors have decades of combined experience managing thousands of colonies.</p>
+            <div class="card-grid cols-3" style="text-align:left;">
+                <div class="card">
+                    <div class="card-img-wrapper" style="aspect-ratio:1/1;">
+                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Dr.+Smith" alt="Mentor 1" class="card-img">
+                    </div>
+                    <div class="card-content text-center">
+                        <h3 class="card-title">Dr. Jonathan Smith</h3>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Entomologist & Master Beekeeper</p>
+                        <p class="card-desc">Specializes in pest management and sustainable breeding techniques.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper" style="aspect-ratio:1/1;">
+                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Maria+Garcia" alt="Mentor 2" class="card-img">
+                    </div>
+                    <div class="card-content text-center">
+                        <h3 class="card-title">Maria Garcia</h3>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Commercial Honey Producer</p>
+                        <p class="card-desc">Expert in large-scale apiary logistics and commercial pollination services.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper" style="aspect-ratio:1/1;">
+                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Lucas+Jensen" alt="Mentor 3" class="card-img">
+                    </div>
+                    <div class="card-content text-center">
+                        <h3 class="card-title">Lucas Jensen</h3>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Urban Beekeeping Specialist</p>
+                        <p class="card-desc">Guiding city dwellers on establishing rooftop and backyard hives safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Upcoming Live Workshops (Different from Testimonials) -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Upcoming Live Workshops</h2>
+                <p class="section-subtitle">Join our interactive virtual sessions to ask questions in real-time.</p>
+            </div>
+            <div class="flex flex-col gap-6">
+                <!-- Row Workshop -->
+                <div class="card" style="flex-direction:row; align-items:center; padding:1.5rem; gap:2rem;">
+                    <div style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
+                        <span style="display:block; font-size:1.5rem; font-weight:bold;">12</span>
+                        <span>May</span>
+                    </div>
+                    <div style="flex:1;">
+                        <h3 class="card-title" style="margin-bottom:0.25rem;">Preparing and Installing Your First Package</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Instructor: Lucas Jensen  |  Duration: 90 mins</p>
+                    </div>
+                    <div>
+                        <a href="services.html" class="btn btn-outline">Register Now</a>
+                    </div>
+                </div>
+                <div class="card" style="flex-direction:row; align-items:center; padding:1.5rem; gap:2rem;">
+                    <div style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
+                        <span style="display:block; font-size:1.5rem; font-weight:bold;">25</span>
+                        <span>May</span>
+                    </div>
+                    <div style="flex:1;">
+                        <h3 class="card-title" style="margin-bottom:0.25rem;">Varroa Mite: Identification and Treatment</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Instructor: Dr. Jonathan Smith  |  Duration: 120 mins</p>
+                    </div>
+                    <div>
+                        <a href="services.html" class="btn btn-outline">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Newsletter Subscription (Different from generic CTA) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="card" style="border:1px solid var(--primary-color); position:relative; overflow:hidden;">
+                <!-- Subtle background pattern -->
+                <div style="position:absolute; right:-5%; bottom:-20%; opacity:0.05; pointer-events:none;">
+                    <i data-lucide="hexagon" style="width:400px; height:400px; color:var(--primary-color);"></i>
+                </div>
+                <div class="card-content" style="padding:4rem; text-align:center; position:relative; z-index:2;">
+                    <h2 class="section-title">Join The Buzz Newsletter</h2>
+                    <p class="section-subtitle">Get monthly tips, seasonal checklists, and exclusive discounts straight to your inbox.</p>
+                    <form style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem;" onsubmit="event.preventDefault()">
+                        <input type="email" placeholder="Enter your email address" required style="flex:1;">
+                        <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+                    </form>
+                    <p style="font-size:0.875rem; color:var(--text-muted); margin-top:1rem;">We respect your inbox. No spam, just honey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1.5rem;">
+                        <i data-lucide="hexagon" class="logo-icon"></i>
+                        <span>HiveMaster</span>
+                    </a>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog & Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Contact Us</h3>
+                    <ul>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HiveMaster Beekeeping Education & Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CSS specifically for workshop mobile wrap -->
+    <style>
+        @media (max-width: 640px) {
+            .flex-col > .card { flex-direction: column !important; text-align: center; }
+            .flex-col > .card > div:first-child { width: 100%; }
+        }
+    </style>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
