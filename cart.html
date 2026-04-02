@@ -179,6 +179,23 @@
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <!-- Mobile Actions (Visible at 1024px) -->
+                <li class="nav-mobile-actions mobile-only">
+                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-auth-mobile mobile-only">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
 
             <!-- Actions -->
@@ -211,7 +228,8 @@
         style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/cart_image.png') no-repeat center center/cover; min-height: 400px; display: flex; align-items: center; text-align: center; color: white; border-bottom: 1px solid var(--border-color);">
         <div class="container" style="width: 100%;">
             <h1 class="hero-title" style="color: white; margin-bottom: 1rem;">Shopping Cart</h1>
-            <p class="hero-subtitle" style="color: #e5e7eb; max-width: 600px; margin: 0 auto;">Review your items before proceeding to secure checkout. Manage your selection and explore more essential beekeeping supplies.</p>
+            <p class="hero-subtitle" style="color: #e5e7eb; max-width: 600px; margin: 0 auto;">Review your items before
+                proceeding to secure checkout. Manage your selection and explore more essential beekeeping supplies.</p>
         </div>
     </header>
 
@@ -270,62 +288,71 @@
             <div class="empty-cart" id="emptyCart">
                 <i data-lucide="shopping-bag"></i>
                 <h2 class="hero-title" style="font-size: 2.5rem; color: var(--text-main);">Your cart is empty</h2>
-                <p class="hero-subtitle" style="color: var(--text-muted);">Looks like you haven't added anything to your cart yet.</p>
+                <p class="hero-subtitle" style="color: var(--text-muted);">Looks like you haven't added anything to your
+                    cart yet.</p>
                 <a href="shop.html" class="btn btn-primary" style="padding-inline: 3rem;">Browse Our Shop</a>
             </div>
         </div>
     </main>
-    
+
     <!-- Recommended Supplies Section -->
     <section class="section-padding bg-alt" style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="flex justify-between items-end" style="margin-bottom: 3rem;">
                 <div>
                     <h2 class="section-title" style="margin-bottom: 0.5rem;">Recommended Supplies</h2>
-                    <p class="section-subtitle" style="margin-bottom: 0;">Essential gear picked for your apiary needs.</p>
+                    <p class="section-subtitle" style="margin-bottom: 0;">Essential gear picked for your apiary needs.
+                    </p>
                 </div>
-                <a href="shop.html" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.875rem;">View All Products <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                <a href="shop.html" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.875rem;">View All
+                    Products <i data-lucide="arrow-right" style="width:16px;"></i></a>
             </div>
-            
-            <div class="card-grid cols-3">
+
+            <div class="card-grid cols-laptop-2 grid-3-centered">
                 <div class="card">
                     <div class="card-img-wrapper">
                         <img src="assets/images/categories/protective-gear.png" alt="Protective Gear" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Professional Bee Suit</h3>
-                        <p class="card-desc">Full-body protection with ventilated fabric for maximum comfort and safety.</p>
+                        <p class="card-desc">Full-body protection with ventilated fabric for maximum comfort and safety.
+                        </p>
                         <div class="flex justify-between items-center mt-4">
                             <span class="text-primary font-bold" style="font-size: 1.25rem;">$129.00</span>
-                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to Cart</a>
+                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to
+                                Cart</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-img-wrapper">
                         <img src="assets/images/categories/tools-smokers.png" alt="Tools & Smokers" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Stainless Steel Smoker</h3>
-                        <p class="card-desc">Heavy-duty smoker with heat shield and high-quality bellows for consistent smoke.</p>
+                        <p class="card-desc">Heavy-duty smoker with heat shield and high-quality bellows for consistent
+                            smoke.</p>
                         <div class="flex justify-between items-center mt-4">
                             <span class="text-primary font-bold" style="font-size: 1.25rem;">$45.00</span>
-                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to Cart</a>
+                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to
+                                Cart</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-img-wrapper">
                         <img src="assets/images/categories/complete-hives.png" alt="Complete Hives" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Langstroth 10-Frame Hive</h3>
-                        <p class="card-desc">Complete hive setup including bottom board, deep boxes, and inner cover.</p>
+                        <p class="card-desc">Complete hive setup including bottom board, deep boxes, and inner cover.
+                        </p>
                         <div class="flex justify-between items-center mt-4">
                             <span class="text-primary font-bold" style="font-size: 1.25rem;">$210.00</span>
-                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to Cart</a>
+                            <a href="shop.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Add to
+                                Cart</a>
                         </div>
                     </div>
                 </div>
@@ -339,58 +366,69 @@
             <div class="flex justify-between items-end" style="margin-bottom: 3rem;">
                 <div>
                     <h2 class="section-title" style="margin-bottom: 0.5rem;">Learn More with Our Courses</h2>
-                    <p class="section-subtitle" style="margin-bottom: 0;">Master the art of beekeeping with expert-led video tutorials.</p>
+                    <p class="section-subtitle" style="margin-bottom: 0;">Master the art of beekeeping with expert-led
+                        video tutorials.</p>
                 </div>
                 <!-- Size reduced button -->
-                <a href="courses.html" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.875rem;">Browse All Courses <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                <a href="courses.html" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.875rem;">Browse
+                    All Courses <i data-lucide="arrow-right" style="width:16px;"></i></a>
             </div>
-            
-            <div class="card-grid cols-3">
+
+            <div class="card-grid cols-laptop-2 grid-3-centered">
                 <!-- Course Card 1 -->
                 <div class="card text-center">
                     <div class="card-img-wrapper">
                         <img src="assets/images/courses/beginner.png" alt="Beekeeping 101" class="card-img">
                     </div>
                     <div class="card-content flex flex-col items-center">
-                        <span class="badge" style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Beginner</span>
+                        <span class="badge"
+                            style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Beginner</span>
                         <h3 class="card-title">Beekeeping 101: Getting Started</h3>
-                        <p class="card-desc">The ultimate guide for first-year beekeepers. Learn everything from hive assembly to bee installation.</p>
+                        <p class="card-desc">The ultimate guide for first-year beekeepers. Learn everything from hive
+                            assembly to bee installation.</p>
                         <div style="text-align: center; width: 100%; margin-top: 1.5rem;">
-                            <a href="course-details.html" class="text-primary font-bold" style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
+                            <a href="course-details.html" class="text-primary font-bold"
+                                style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
                                 Explore Lessons <i data-lucide="chevron-right" style="width:16px;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Course Card 2 -->
                 <div class="card text-center">
                     <div class="card-img-wrapper">
                         <img src="assets/images/courses/advanced.png" alt="Queen Rearing" class="card-img">
                     </div>
                     <div class="card-content flex flex-col items-center">
-                        <span class="badge" style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Advanced</span>
+                        <span class="badge"
+                            style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Advanced</span>
                         <h3 class="card-title">Advanced Queen Rearing</h3>
-                        <p class="card-desc">Take your beekeeping to the next level by learning how to breed and introduce your own queens.</p>
+                        <p class="card-desc">Take your beekeeping to the next level by learning how to breed and
+                            introduce your own queens.</p>
                         <div style="text-align: center; width: 100%; margin-top: 1.5rem;">
-                            <a href="course-details.html" class="text-primary font-bold" style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
+                            <a href="course-details.html" class="text-primary font-bold"
+                                style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
                                 Explore Lessons <i data-lucide="chevron-right" style="width:16px;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Course Card 3 -->
                 <div class="card text-center">
                     <div class="card-img-wrapper">
                         <img src="assets/images/courses/honey-extraction.png" alt="Honey Harvesting" class="card-img">
                     </div>
                     <div class="card-content flex flex-col items-center">
-                        <span class="badge" style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Specialist</span>
+                        <span class="badge"
+                            style="background: var(--bg-alt); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;">Specialist</span>
                         <h3 class="card-title">Honey Harvesting Masterclass</h3>
-                        <p class="card-desc">Master the techniques for clean honey extraction, filtering, and bottling for personal use or sale.</p>
+                        <p class="card-desc">Master the techniques for clean honey extraction, filtering, and bottling
+                            for personal use or sale.</p>
                         <div style="text-align: center; width: 100%; margin-top: 1.5rem;">
-                            <a href="course-details.html" class="text-primary font-bold" style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
+                            <a href="course-details.html" class="text-primary font-bold"
+                                style="display: inline-flex; align-items: center; gap: 0.25rem; margin: 0 auto;">
                                 Explore Lessons <i data-lucide="chevron-right" style="width:16px;"></i>
                             </a>
                         </div>
@@ -412,7 +450,8 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
                         comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
                         <a href="#" class="social-icon" aria-label="Instagram">
@@ -489,5 +528,3 @@
 </body>
 
 </html>
-
-

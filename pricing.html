@@ -24,7 +24,7 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .page-header .hero-title, 
+        .page-header .hero-title,
         .page-header .hero-subtitle {
             color: #fff;
         }
@@ -92,38 +92,6 @@
             flex-shrink: 0;
             margin-top: 0.25rem;
         }
-
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            font-size: 1.125rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        .faq-answer {
-            color: var(--text-muted);
-            margin-top: 1rem;
-            display: none;
-        }
-
-        /* Simple hack for faq open state (not strictly needed but good for visual) */
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .faq-item.active i {
-            transform: rotate(180deg);
-        }
     </style>
 </head>
 
@@ -145,6 +113,23 @@
                 <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <!-- Mobile Actions (Visible at 1024px) -->
+                <li class="nav-mobile-actions mobile-only">
+                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-auth-mobile mobile-only">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
             <div class="nav-actions">
                 <div class="nav-auth flex items-center gap-2">
@@ -179,7 +164,7 @@
     <section class="section-padding">
         <div class="container">
             <!-- 3 Pricing Cards -->
-            <div class="card-grid cols-3" style="gap: 2rem;">
+            <div class="card-grid cols-laptop-2 grid-3-centered cols-desktop-3">
 
                 <!-- Plan 1 -->
                 <div class="pricing-card">
@@ -249,34 +234,40 @@
         <div class="container text-center">
             <h2 class="section-title">The HiveMaster Difference</h2>
             <p class="section-subtitle">Why thousands of beekeepers choose our platform.</p>
-            <div class="card-grid cols-3" style="gap: 2rem;">
+            <div class="card-grid cols-laptop-2 grid-3-centered" style="gap: 2rem;">
                 <div class="card text-center">
                     <div class="card-content" style="padding: 3rem 2rem;">
-                        <div class="btn-icon" style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <div class="btn-icon"
+                            style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
                             <i data-lucide="layout-dashboard"></i>
                         </div>
                         <h3 style="font-size: 1.25rem;">Proprietary Dashboard</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 0;">Track honey yields, medication schedules, and colony
+                        <p style="color: var(--text-muted); margin-bottom: 0;">Track honey yields, medication schedules,
+                            and colony
                             temperament natively within our system.</p>
                     </div>
                 </div>
                 <div class="card text-center">
                     <div class="card-content" style="padding: 3rem 2rem;">
-                        <div class="btn-icon" style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <div class="btn-icon"
+                            style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
                             <i data-lucide="graduation-cap"></i>
                         </div>
                         <h3 style="font-size: 1.25rem;">Certified Curriculum</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 0;">Our online courses are reviewed by university entomology
+                        <p style="color: var(--text-muted); margin-bottom: 0;">Our online courses are reviewed by
+                            university entomology
                             departments for scientific accuracy.</p>
                     </div>
                 </div>
                 <div class="card text-center">
                     <div class="card-content" style="padding: 3rem 2rem;">
-                        <div class="btn-icon" style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <div class="btn-icon"
+                            style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
                             <i data-lucide="package-check"></i>
                         </div>
                         <h3 style="font-size: 1.25rem;">Free Shipping on Kits</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 0;">Heavy woodenware can be expensive to ship. With our bundle,
+                        <p style="color: var(--text-muted); margin-bottom: 0;">Heavy woodenware can be expensive to
+                            ship. With our bundle,
                             palletized shipping is on us.</p>
                     </div>
                 </div>
@@ -293,63 +284,52 @@
             </div>
 
             <div class="faq-list">
+                <!-- FAQ Item 1 (Active by default) -->
                 <div class="faq-item active">
                     <div class="faq-question">
-                        <span>Are live bees included in the Backyard Bundle?</span>
-                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
+                        <h3>Are live bees included in the Backyard Bundle?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
+                    </div>
+                    <div class="faq-answer" style="display: block;">
+                        <p>No, live bees (packages or nucs) are sold separately due to seasonal agricultural shipping
+                            restrictions. However, purchasing the bundle gives you priority access to reserve our spring
+                            bee
+                            packages.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I cancel my digital membership at any time?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        No, live bees (packages or nucs) are sold separately due to seasonal agricultural shipping
-                        restrictions. However, purchasing the bundle gives you priority access to reserve our spring bee
-                        packages.
+                        <p>Yes, our monthly subscriptions can be canceled at any time from your dashboard settings. You
+                            will retain access until the end of your billing cycle.</p>
                     </div>
                 </div>
+
+                <!-- FAQ Item 3 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Can I cancel my digital membership at any time?</span>
-                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
+                        <h3>Do you offer discounts for bulk physical orders?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
                     </div>
-                    <div class="faq-answer" style="display:block;">
-                        Yes, our monthly subscriptions can be canceled at any time from your dashboard settings. You
-                        will retain access until the end of your billing cycle.
-                    </div>
-                </div>
-                <!-- Need JS or simple CSS for toggle, using JS in HTML logic or assume it is open -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer discounts for bulk physical orders?</span>
-                        <i data-lucide="chevron-down" style="transition: var(--transition);"></i>
-                    </div>
-                    <div class="faq-answer" style="display:block;">
-                        Yes! If you are a Pro Apiarist member, you automatically receive a 20% discount on all physical
-                        woodenware and protective gear.
+                    <div class="faq-answer">
+                        <p>Yes! If you are a Pro Apiarist member, you automatically receive a 20% discount on all
+                            physical
+                            woodenware and protective gear.</p>
                     </div>
                 </div>
             </div>
 
-            <script>
-                // Quick inline JS for FAQ toggle since we don't want to overcomplicate main.js
-                document.querySelectorAll('.faq-question').forEach(item => {
-                    item.addEventListener('click', event => {
-                        const parent = item.parentElement;
-                        const answer = parent.querySelector('.faq-answer');
-                        const icon = parent.querySelector('i');
-                        if (answer.style.display === 'block') {
-                            answer.style.display = 'none';
-                            icon.style.transform = 'rotate(0deg)';
-                        } else {
-                            answer.style.display = 'block';
-                            icon.style.transform = 'rotate(180deg)';
-                        }
-                    })
-                })
-            </script>
         </div>
     </section>
 
     <!-- Footer -->
-        <!-- Footer -->
-        <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -358,7 +338,8 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
                         comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
                         <a href="#" class="social-icon" aria-label="Instagram">
@@ -454,5 +435,3 @@
 </body>
 
 </html>
-
-

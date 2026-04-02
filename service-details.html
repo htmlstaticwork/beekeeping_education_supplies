@@ -47,6 +47,23 @@
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <!-- Mobile Actions (Visible at 1024px) -->
+                <li class="nav-mobile-actions mobile-only">
+                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-auth-mobile mobile-only">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
             <div class="nav-actions">
                 <div class="nav-auth flex items-center gap-2">
@@ -75,7 +92,8 @@
                 style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.2); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem;">
                 Premium Service</div>
             <h1 class="hero-title" id="hero-title">Educational Workshops</h1>
-            <p class="hero-subtitle" id="hero-subtitle">Interactive online and in-person courses designed to take you from a curious
+            <p class="hero-subtitle" id="hero-subtitle">Interactive online and in-person courses designed to take you
+                from a curious
                 beginner to a confident apiarist.</p>
         </div>
     </header>
@@ -92,10 +110,13 @@
                     <h2 class="section-title" id="description-title">Comprehensive Beekeeping Education</h2>
                     <div id="description-text">
                         <p class="card-desc" style="font-size: 1.125rem;">Our educational workshops are meticulously
-                            structured to cover the complete lifecycle of a honeybee colony. We provide both asynchronous
-                            video courses for remote learning, as well as hands-on field days in our teaching apiaries.</p>
+                            structured to cover the complete lifecycle of a honeybee colony. We provide both
+                            asynchronous
+                            video courses for remote learning, as well as hands-on field days in our teaching apiaries.
+                        </p>
                         <p class="card-desc" style="font-size: 1.125rem;">Led by master beekeepers, these sessions blend
-                            scientific entomology with practical, time-tested hive management techniques. You will learn to
+                            scientific entomology with practical, time-tested hive management techniques. You will learn
+                            to
                             properly inspect frames, identify diseases early, and safely harvest honey.</p>
                     </div>
                 </div>
@@ -107,7 +128,8 @@
     <section class="section-padding bg-alt">
         <div class="container text-center">
             <h2 class="section-title" id="benefits-title">What You'll Learn</h2>
-            <p class="section-subtitle" id="benefits-subtitle">Core competencies covered in our specialized programs.</p>
+            <p class="section-subtitle" id="benefits-subtitle">Core competencies covered in our specialized programs.
+            </p>
 
             <div class="card-grid cols-4" id="benefits-grid" style="text-align: left;">
                 <!-- Dynamically Inserted -->
@@ -121,7 +143,8 @@
             <div class="card" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
                 <div class="text-center" style="margin-bottom: 2rem;">
                     <h2 class="section-title" id="cta-title">Ready to Enroll?</h2>
-                    <p class="card-desc" id="cta-desc">Get access to our complete library of workshops starting at just $49/month or
+                    <p class="card-desc" id="cta-desc">Get access to our complete library of workshops starting at just
+                        $49/month or
                         book a private session.</p>
                 </div>
                 <div class="flex flex-col gap-4" id="pricing-cards">
@@ -132,8 +155,8 @@
     </section>
 
     <!-- Footer -->
-        <!-- Footer -->
-        <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -142,7 +165,8 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
                         comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
                         <a href="#" class="social-icon" aria-label="Instagram">
@@ -380,28 +404,28 @@
 
         function updatePage(serviceKey) {
             const data = servicesData[serviceKey] || servicesData['workshops'];
-            
+
             // Basic Info
             document.title = `${data.title} - HiveMaster`;
             document.getElementById('hero-title').textContent = data.title;
             document.getElementById('hero-subtitle').textContent = data.subtitle;
             document.getElementById('service-badge').textContent = data.badge;
             document.getElementById('dynamic-header').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/service_detailsimg.png')`;
-            
+
             // Section 2
             document.getElementById('main-image').src = data.mainImage;
             document.getElementById('main-image').alt = data.title;
             document.getElementById('description-title').textContent = data.descTitle;
-            
+
             const descContainer = document.getElementById('description-text');
-            descContainer.innerHTML = data.description.map(p => 
+            descContainer.innerHTML = data.description.map(p =>
                 `<p class="card-desc" style="font-size: 1.125rem;">${p}</p>`
             ).join('');
 
             // Section 3
             document.getElementById('benefits-title').textContent = data.benefitsTitle;
             document.getElementById('benefits-subtitle').textContent = data.benefitsSubtitle;
-            
+
             const benefitsGrid = document.getElementById('benefits-grid');
             benefitsGrid.innerHTML = data.benefits.map(b => `
                 <div class="card" style="padding: 2rem;">
@@ -414,7 +438,7 @@
             // Section 4
             document.getElementById('cta-title').textContent = data.ctaTitle;
             document.getElementById('cta-desc').textContent = data.ctaDesc;
-            
+
             const pricingCards = document.getElementById('pricing-cards');
             pricingCards.innerHTML = data.pricing.map(p => `
                 <div class="card ${p.active ? 'bg-alt' : ''}" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 1.5rem; ${p.active ? 'border-color: var(--primary-color);' : ''}">
@@ -462,5 +486,3 @@
 </body>
 
 </html>
-
-

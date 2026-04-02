@@ -65,6 +65,23 @@
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <!-- Mobile Actions (Visible at 1024px) -->
+                <li class="nav-mobile-actions mobile-only">
+                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-auth-mobile mobile-only">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
             <div class="nav-actions">
                 <div class="nav-auth flex items-center gap-2">
@@ -98,7 +115,7 @@
     <!-- Section 2: Contact Info Cards -->
     <section class="section-padding">
         <div class="container">
-            <div class="grid grid-cols-3 gap-8">
+            <div class="card-grid cols-laptop-2 grid-3-centered">
                 <div class="contact-info-card">
                     <i data-lucide="map-pin"></i>
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Visit Our Apiary</h3>
@@ -128,26 +145,31 @@
                 <div class="card" style="padding: 3rem; height: 100%;">
                     <div style="margin-bottom: 2.5rem; text-align: center;">
                         <h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 0.5rem;">Send a Message</h2>
-                        <p style="margin-bottom: 0; color: var(--text-muted);">Our support team typically replies within 24 hours.</p>
+                        <p style="margin-bottom: 0; color: var(--text-muted);">Our support team typically replies within
+                            24 hours.</p>
                     </div>
                     <form onsubmit="event.preventDefault()">
                         <div class="grid grid-cols-2 gap-4" style="margin-bottom: 1.5rem;">
                             <div>
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name *</label>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name
+                                    *</label>
                                 <input type="text" placeholder="John" required>
                             </div>
                             <div>
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name *</label>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name
+                                    *</label>
                                 <input type="text" placeholder="Doe" required>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4" style="margin-bottom: 1.5rem;">
                             <div>
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address
+                                    *</label>
                                 <input type="email" placeholder="john@example.com" required>
                             </div>
                             <div>
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone
+                                    Number</label>
                                 <input type="tel" placeholder="(555) 123-4567">
                             </div>
                         </div>
@@ -161,7 +183,8 @@
                             </select>
                         </div>
                         <div style="margin-bottom: 2rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Message *</label>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Message
+                                *</label>
                             <textarea rows="5" placeholder="How can we help you?" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
@@ -172,9 +195,11 @@
                 <div class="flex flex-col" style="height: 100%;">
                     <div style="margin-bottom: 2.5rem; text-align: center; padding-top: 1.5rem;">
                         <h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 0.5rem;">Find Us</h2>
-                        <p style="margin-bottom: 0; color: var(--text-muted);">Visit our local apiary in Austin or reach out for consulting.</p>
+                        <p style="margin-bottom: 0; color: var(--text-muted);">Visit our local apiary in Austin or reach
+                            out for consulting.</p>
                     </div>
-                    <div style="flex-grow: 1; min-height: 450px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <div
+                        style="flex-grow: 1; min-height: 450px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
                         <iframe width="100%" height="100%"
                             src="https://www.openstreetmap.org/export/embed.html?bbox=-97.80214309692384%2C30.22858564073341%2C-97.69742965698244%2C30.301321049969018&amp;layer=mapnik"
                             style="border: none;" allowfullscreen>
@@ -185,37 +210,69 @@
         </div>
     </section>
 
-    <!-- Section 5: Support & FAQ (Related Information) -->
+    <!-- Section 5: Support & FAQ -->
     <section class="section-padding">
-        <div class="container">
+        <div class="container" style="max-width: 800px;">
             <div class="text-center" style="margin-bottom: 4rem;">
                 <h2 class="section-title">Support & FAQ</h2>
                 <p class="section-subtitle">Find quick answers to common questions about our services and supplies.</p>
             </div>
-            <div class="grid grid-cols-2 gap-8">
-                <div class="card" style="padding: 2.5rem; border-left: 4px solid var(--primary-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">How long does shipping take?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Standard shipping typically takes 3-5 business days. Express options are available at checkout for urgent beekeeping supplies.</p>
+
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does shipping take?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard shipping typically takes 3-5 business days. Express options are available at
+                            checkout for urgent beekeeping supplies.</p>
+                    </div>
                 </div>
-                <div class="card" style="padding: 2.5rem; border-left: 4px solid var(--primary-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">Do you offer on-site consulting?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Yes! We provide on-site apiary assessments within the Austin area. For customers further away, we offer virtual video consultations.</p>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer on-site consulting?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide on-site apiary assessments within the Austin area. For customers further
+                            away, we offer virtual video consultations.</p>
+                    </div>
                 </div>
-                <div class="card" style="padding: 2.5rem; border-left: 4px solid var(--primary-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">Can I return educational courses?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Online courses are eligible for a full refund within 14 days of purchase if less than 20% of the content has been viewed.</p>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I return educational courses?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Online courses are eligible for a full refund within 14 days of purchase if less than 20% of
+                            the content has been viewed.</p>
+                    </div>
                 </div>
-                <div class="card" style="padding: 2.5rem; border-left: 4px solid var(--primary-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">Are the supplies professional grade?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Absolutely. All our equipment is tested in our own commercial apiaries to ensure it meets the highest standards for durability and safety.</p>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are the supplies professional grade?</h3>
+                        <i data-lucide="chevron-down" class="faq-question-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All our equipment is tested in our own commercial apiaries to ensure it meets the
+                            highest standards for durability and safety.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-        <!-- Footer -->
-        <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -224,7 +281,8 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
                         comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
                         <a href="#" class="social-icon" aria-label="Instagram">
@@ -320,5 +378,3 @@
 </body>
 
 </html>
-
-

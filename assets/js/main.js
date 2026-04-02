@@ -94,4 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     updateCartBadge();
+
+    // 6. FAQ Accordion Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (question && answer) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Optional: Close other items (if you want only one open at a time)
+                // faqItems.forEach(otherItem => {
+                //     otherItem.classList.remove('active');
+                //     otherItem.querySelector('.faq-answer').style.display = 'none';
+                // });
+
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.display = 'none';
+                } else {
+                    item.classList.add('active');
+                    answer.style.display = 'block';
+                }
+            });
+        }
+    });
 });

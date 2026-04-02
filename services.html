@@ -41,6 +41,23 @@
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <!-- Mobile Actions (Visible at 1024px) -->
+                <li class="nav-mobile-actions mobile-only">
+                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-auth-mobile mobile-only">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
             <div class="nav-actions">
                 <div class="nav-auth flex items-center gap-2">
@@ -74,7 +91,7 @@
     <!-- Section 2: Services Listing (6 Cards) -->
     <section class="section-padding">
         <div class="container">
-            <div class="card-grid cols-3">
+            <div class="card-grid cols-laptop-2 cols-desktop-2">
                 <div class="card">
                     <div class="card-img-wrapper" style="aspect-ratio:3/2;">
                         <img src="assets/images/Apiary Consulting.png" alt="Consulting" class="card-img">
@@ -168,11 +185,11 @@
         <div class="container text-center">
             <h2 class="section-title">How It Works</h2>
             <p class="section-subtitle">Our streamlined process ensures you get the exact support your apiary needs.</p>
-            <div class="grid grid-cols-3 gap-8 text-left" style="margin-top: 3rem;">
+            <div class="grid cols-laptop-2 grid-3-centered gap-8 text-center" style="margin-top: 3rem;">
                 <div
                     style="background: var(--card-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
                     <div
-                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin: 0 auto 1.5rem;">
                         01</div>
                     <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Initial Consultation</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">We begin with a thorough assessment of your
@@ -181,7 +198,7 @@
                 <div
                     style="background: var(--card-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
                     <div
-                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin: 0 auto 1.5rem;">
                         02</div>
                     <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Custom Strategy</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Our masters develop a tailored plan,
@@ -190,7 +207,7 @@
                 <div
                     style="background: var(--card-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
                     <div
-                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                        style="width: 48px; height: 48px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; margin: 0 auto 1.5rem;">
                         03</div>
                     <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Ongoing Support</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Through our proprietary dashboard, you'll
