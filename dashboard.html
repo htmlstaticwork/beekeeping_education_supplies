@@ -269,17 +269,7 @@
                     <li><a href="contact.html" class="nav-link" style="font-size: 0.9rem;">Contact</a></li>
                 </nav>
 
-                <div class="flex items-center gap-4">
-                    <a href="cart.html" class="cart-btn" aria-label="View Cart">
-                        <i data-lucide="shopping-cart"></i>
-                        <span class="cart-badge">0</span>
-                    </a>
-                    <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
-                        <i data-lucide="moon"></i>
-                    </button>
-                    <button class="btn btn-primary"
-                        style="padding: 0.5rem 1rem; font-size: 0.875rem; white-space: nowrap;">New Inspection</button>
-                </div>
+                <!-- Right side actions removed for mobile/tab -->
             </header>
 
             <!-- Dashboard Content -->
@@ -371,13 +361,13 @@
                             <h3 style="margin:0; font-size:1.25rem;">Continue Learning</h3>
                         </div>
                         <div
-                            style="position:relative; border-radius:var(--radius-md); overflow:hidden; margin-bottom:1rem;">
-                            <img src="https://placehold.co/600x300/f59e0b/1f2937?text=Video+Thumbnail" alt="Video"
-                                style="width:100%; display:block;">
+                            style="position:relative; border-radius:var(--radius-md); overflow:hidden; margin-bottom:1rem; aspect-ratio: 16/9;">
+                            <img src="assets/images/courses/beekeeping_tutorial_thumbnail.png" alt="Video"
+                                style="width:100%; height:100%; object-fit:cover; display:block;">
                             <div
                                 style="position:absolute; inset:0; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
-                                <button class="btn-icon"
-                                    style="background:var(--primary-color); color:#fff; width:56px; height:56px;"><i
+                                <button class="btn-icon" onclick="playTutorialVideo(this)"
+                                    style="background:var(--primary-color); color:#fff; width:56px; height:56px; border-radius:50%; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); border:none; cursor:pointer;"><i
                                         data-lucide="play"
                                         style="width:24px; height:24px; margin-left:4px;"></i></button>
                             </div>
@@ -400,24 +390,23 @@
     <script src="assets/js/main.js"></script>
     <style>
         /* Mobile dashboard tweaks */
-        @media (max-width: 1023px) {
-            #dashboardMenuBtn {
-                display: block !important;
-            }
-
-            .grid-cols-4 {
-                grid-template-columns: repeat(2, 1fr) !important;
+        @media (max-width: 1024px) {
+            .grid-cols-4,
+            .grid-cols-3,
+            .grid-cols-2 {
+                grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
 
-            .grid-cols-2 {
-                grid-template-columns: 1fr !important;
+            .col-span-2,
+            [style*="grid-column: span 2"] {
+                grid-column: 1 / -1 !important;
             }
         }
 
-        @media (max-width: 640px) {
-            .grid-cols-4 {
-                grid-template-columns: 1fr !important;
+        @media (max-width: 1023px) {
+            #dashboardMenuBtn {
+                display: block !important;
             }
         }
     </style>

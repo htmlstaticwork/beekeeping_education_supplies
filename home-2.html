@@ -372,7 +372,7 @@
                     <h2 class="section-title">Join The Buzz Newsletter</h2>
                     <p class="section-subtitle">Get monthly tips, seasonal checklists, and exclusive discounts straight
                         to your inbox.</p>
-                    <form style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem;"
+                    <form class="newsletter-form" style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem;"
                         onsubmit="event.preventDefault()">
                         <input type="email" placeholder="Enter your email address" required style="flex:1;">
                         <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
@@ -480,6 +480,14 @@
             }
 
             .flex-col>.card>div:first-child {
+                width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
                 width: 100%;
             }
         }

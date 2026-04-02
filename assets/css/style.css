@@ -168,6 +168,10 @@ p {
   align-items: center;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -223,6 +227,15 @@ p {
   }
 }
 
+@media (max-width: 768px) {
+  .cta-btns-mobile {
+    flex-direction: column !important;
+  }
+  .cta-btns-mobile .btn {
+    width: 100%;
+  }
+}
+
 /* Grid System */
 /* Designed for even numbers (4 or 6) */
 .grid {
@@ -265,6 +278,13 @@ p {
 @media (min-width: 768px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Logic for centering the 3rd card in a 2-column layout (768px - 991px) */
+  .card-grid.grid-3-centered>*:last-child:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 1rem);
   }
 }
 
@@ -554,6 +574,8 @@ p {
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
     gap: 1.5rem;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .navbar.menu-open .nav-actions {
@@ -811,7 +833,15 @@ p {
     text-align: center;
   }
 
+  .footer-grid .logo {
+    justify-content: center;
+  }
+
   .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-col ul li.flex {
     justify-content: center;
   }
 }

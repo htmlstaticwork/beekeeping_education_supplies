@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <i data-lucide="more-horizontal" style="color:var(--text-muted);"></i>
                         </div>
                         <div style="position:relative; border-radius:var(--radius-md); overflow:hidden; margin-bottom:1rem; aspect-ratio: 16/9;">
-                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=800" alt="Video" style="width:100%; height:100%; object-fit:cover;">
+                            <img src="assets/images/courses/beekeeping_tutorial_thumbnail.png" alt="Video" style="width:100%; height:100%; object-fit:cover;">
                             <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
-                                <button class="btn-icon" style="background:var(--primary-color); color:#fff; width:56px; height:56px; border-radius:50%; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);"><i data-lucide="play" style="width:24px; height:24px; margin-left:4px;"></i></button>
+                                <button class="btn-icon" onclick="playTutorialVideo(this)" style="background:var(--primary-color); color:#fff; width:56px; height:56px; border-radius:50%; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); border:none; cursor:pointer;"><i data-lucide="play" style="width:24px; height:24px; margin-left:4px;"></i></button>
                             </div>
                         </div>
                         <h4 style="margin:0 0 0.5rem; font-size:1rem; color:var(--text-main);">Module 3: Swarm Prevention Strategies</h4>
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h1 style="font-size:1.75rem; color:var(--text-main); margin-bottom:0.5rem;">Hive Health Reports</h1>
                         <p style="color:var(--text-muted); margin:0;">Detailed inspection logs for your colonies.</p>
                     </div>
-                    <button class="btn btn-primary" style="padding: 0.6rem 1.25rem;"><i data-lucide="plus" style="width:18px; margin-right:8px;"></i> New Inspection</button>
+
                 </div>
 
                 <div class="grid grid-cols-2 gap-6">
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h3 style="margin:0; font-size:1.125rem; color:var(--text-main);">Hive #01 (Front Orchard)</h3>
                                 <p style="margin:0; font-size:0.875rem; color:var(--text-muted);">Langstroth • Spring Build-up</p>
                             </div>
-                            <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.35rem 0.85rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Excellent</span>
+                            <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.35rem 0.85rem; border-radius: var(--radius-md); font-size: 0.75rem; font-weight: 700; white-space: nowrap; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;">Excellent</span>
                         </div>
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
                             <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: 12px; border: 1px solid var(--border-color);">
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h3 style="margin:0; font-size:1.125rem; color:var(--text-main);">Hive #02 (West Field)</h3>
                                 <p style="margin:0; font-size:0.875rem; color:var(--text-muted);">Top Bar • Queen Replacement</p>
                             </div>
-                            <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.35rem 0.85rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Monitor</span>
+                            <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.35rem 0.85rem; border-radius: var(--radius-md); font-size: 0.75rem; font-weight: 700; white-space: nowrap; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;">Monitor</span>
                         </div>
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
                             <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: 12px; border: 1px solid var(--border-color);">
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <div class="grid grid-cols-3 gap-6">
                     <div class="card" style="overflow:hidden; height: auto;">
-                        <img src="https://images.unsplash.com/photo-1558508958-c91d845cd15c?auto=format&fit=crop&q=80&w=800" style="width:100%; height:180px; object-fit:cover;">
+                        <img src="assets/images/courses/beginner.png" style="width:100%; height:180px; object-fit:cover;">
                         <div style="padding:1.5rem;">
                             <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block;">Beginner</span>
                             <h4 style="margin:0 0 0.75rem; color:var(--text-main); font-size: 1.125rem;">Intro to Hive Anatomy</h4>
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="card" style="overflow:hidden; height: auto;">
-                        <img src="https://images.unsplash.com/photo-1621460249243-7377507cc362?auto=format&fit=crop&q=80&w=800" style="width:100%; height:180px; object-fit:cover;">
+                        <img src="assets/images/courses/advanced.png" style="width:100%; height:180px; object-fit:cover;">
                         <div style="padding:1.5rem;">
                             <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block;">Advanced</span>
                             <h4 style="margin:0 0 0.75rem; color:var(--text-main); font-size: 1.125rem;">Queen Rearing Basics</h4>
@@ -450,5 +450,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
-});
 
+    // Global video player function
+    window.playTutorialVideo = function(element) {
+        const container = element.parentElement.parentElement;
+        container.innerHTML = `
+            <video width="100%" height="100%" controls autoplay style="object-fit: cover; border-radius: var(--radius-md); max-height: 100%;">
+                <source src="assets/images/dashboard-video.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        `;
+    };
+});

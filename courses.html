@@ -75,6 +75,18 @@
         .course-card {
             animation: fadeIn 0.4s ease forwards;
         }
+
+        @media (max-width: 991px) {
+            .benefits-grid.grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid > div:first-child {
+                order: 2;
+            }
+            .benefits-grid > div:last-child {
+                order: 1;
+            }
+        }
     </style>
 </head>
 
@@ -294,7 +306,7 @@
     <!-- Benefits / Why Learn Section -->
     <section class="section-padding bg-alt">
         <div class="container">
-            <div class="grid grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-2 gap-12 items-center benefits-grid">
                 <div>
                     <h2 class="section-title" style="text-align: left;">Why Learn with HiveMaster?</h2>
                     <p class="section-subtitle" style="text-align: left; margin-left: 0;">Our education platform is
@@ -336,8 +348,10 @@
                         </div>
                     </div>
 
-                    <a href="course-details.html" class="btn btn-primary" style="margin-top: 2.5rem;">Start Your Journey
-                        <i data-lucide="arrow-right"></i></a>
+                    <div class="text-center">
+                        <a href="course-details.html" class="btn btn-primary" style="margin-top: 2.5rem;">Start Your Journey
+                            <i data-lucide="arrow-right"></i></a>
+                    </div>
                 </div>
                 <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
                     <img src="assets/images/courses/hive-mgmt.png" alt="Beekeeping Learning"
