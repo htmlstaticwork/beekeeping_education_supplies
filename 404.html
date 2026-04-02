@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,74 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container">
+            <!-- Logo -->
             <a href="index.html" class="logo">
                 <i data-lucide="hexagon" class="logo-icon"></i>
                 <span>HiveMaster</span>
             </a>
+
+            <!-- Desktop Menu -->
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
             </ul>
+
+            <!-- Actions -->
             <div class="nav-actions">
-                <button class="btn-icon dark-toggle"><i data-lucide="moon"></i></button>
-                <button class="btn-icon rtl-toggle"><i data-lucide="languages"></i></button>
-                <div class="nav-auth flex gap-4">
+                <div class="nav-auth flex items-center gap-2">
                     <a href="login.html" class="btn btn-outline">Login</a>
                     <a href="register.html" class="btn btn-primary">Sign Up</a>
                 </div>
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </nav>
 
     <!-- 404 Content -->
-    <section class="section-padding bg-alt" style="min-height: calc(100vh - 80px - 400px); display: flex; align-items: center; justify-content: center;">
+    <section class="section-padding bg-alt"
+        style="min-height: calc(100vh - 80px - 400px); display: flex; align-items: center; justify-content: center;">
         <div class="container text-center">
-            <h1 style="font-size: clamp(6rem, 15vw, 10rem); color: var(--primary-color); font-weight: 800; line-height: 1; margin-bottom: 1rem;">404</h1>
+            <h1
+                style="font-size: clamp(6rem, 15vw, 10rem); color: var(--primary-color); font-weight: 800; line-height: 1; margin-bottom: 1rem;">
+                404</h1>
             <h2 class="section-title">Looks like your bees flew away!</h2>
-            <p class="section-subtitle" style="margin-bottom: 2rem;">We couldn't find the page you were looking for. It might have been moved or deleted.</p>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">We couldn't find the page you were looking for. It
+                might have been moved or deleted.</p>
             <a href="index.html" class="btn btn-primary" style="padding-inline: 3rem;">Return to Hive</a>
         </div>
     </section>
 
+    <!-- Footer -->
+    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -59,12 +85,44 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col footer-dark-text">
@@ -79,18 +137,21 @@
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Resources</h3>
                     <ul>
-                        <li><a href="blog.html">Blog & Guides</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Contact Us</h3>
                     <ul>
-                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
-                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
                     </ul>
                 </div>
             </div>
@@ -103,4 +164,5 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

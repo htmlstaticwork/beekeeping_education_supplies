@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -26,8 +29,8 @@
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
@@ -35,16 +38,20 @@
 
             <!-- Actions -->
             <div class="nav-actions">
+                <div class="nav-auth flex items-center gap-2">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
                 <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="moon"></i>
                 </button>
                 <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
                     <i data-lucide="languages"></i>
                 </button>
-                <div class="nav-auth flex gap-4">
-                    <a href="login.html" class="btn btn-outline">Login</a>
-                    <a href="register.html" class="btn btn-primary">Sign Up</a>
-                </div>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -56,20 +63,17 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-blob"></div>
-        <div class="container relative">
+        <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Master the Art of <span class="text-primary">Beekeeping</span></h1>
-                <p class="hero-subtitle">Comprehensive education and premium supplies for beginner and professional apiarists. Start your beekeeping journey today.</p>
+                <p class="hero-subtitle">Comprehensive education and premium supplies for beginner and professional
+                    apiarists. Start your beekeeping journey today.</p>
                 <div class="hero-btns">
-                    <a href="services.html" class="btn btn-primary">
+                    <a href="courses.html" class="btn btn-primary">
                         Explore Courses <i data-lucide="arrow-right"></i>
                     </a>
                     <a href="about.html" class="btn btn-outline">Learn More</a>
                 </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="https://placehold.co/800x600/f59e0b/1f2937?text=Beekeeper" alt="Beekeeper observing hive">
             </div>
         </div>
     </section>
@@ -79,36 +83,45 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Why Choose HiveMaster?</h2>
-                <p class="section-subtitle">We provide everything you need to build and maintain healthy, thriving bee colonies.</p>
+                <p class="section-subtitle">We provide everything you need to build and maintain healthy, thriving bee
+                    colonies.</p>
             </div>
             <!-- 4 Cards Layout -->
             <div class="card-grid cols-4">
                 <div class="card">
                     <div class="card-content">
-                        <i data-lucide="book-open" class="text-primary" style="width:48px; height:48px; margin-bottom:1rem;"></i>
+                        <i data-lucide="book-open" class="text-primary"
+                            style="width:48px; height:48px; margin-bottom:1rem;"></i>
                         <h3 class="card-title">Expert Education</h3>
-                        <p class="card-desc">Learn from master beekeepers through hands-on tutorials and comprehensive video guides.</p>
+                        <p class="card-desc">Learn from master beekeepers through hands-on tutorials and comprehensive
+                            video guides.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <i data-lucide="shield-check" class="text-primary" style="width:48px; height:48px; margin-bottom:1rem;"></i>
+                        <i data-lucide="shield-check" class="text-primary"
+                            style="width:48px; height:48px; margin-bottom:1rem;"></i>
                         <h3 class="card-title">Premium Supplies</h3>
-                        <p class="card-desc">We stock only the highest quality hives, tools, and protective gear for safe beekeeping.</p>
+                        <p class="card-desc">We stock only the highest quality hives, tools, and protective gear for
+                            safe beekeeping.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <i data-lucide="users" class="text-primary" style="width:48px; height:48px; margin-bottom:1rem;"></i>
+                        <i data-lucide="users" class="text-primary"
+                            style="width:48px; height:48px; margin-bottom:1rem;"></i>
                         <h3 class="card-title">Community Support</h3>
-                        <p class="card-desc">Join a thriving community of apiarists. Share knowledge, ask questions, and grow together.</p>
+                        <p class="card-desc">Join a thriving community of apiarists. Share knowledge, ask questions, and
+                            grow together.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <i data-lucide="truck" class="text-primary" style="width:48px; height:48px; margin-bottom:1rem;"></i>
+                        <i data-lucide="truck" class="text-primary"
+                            style="width:48px; height:48px; margin-bottom:1rem;"></i>
                         <h3 class="card-title">Fast Delivery</h3>
-                        <p class="card-desc">Get your beekeeping equipment delivered quickly and safely right to your doorstep.</p>
+                        <p class="card-desc">Get your beekeeping equipment delivered quickly and safely right to your
+                            doorstep.</p>
                     </div>
                 </div>
             </div>
@@ -120,79 +133,82 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Shop by Category</h2>
-                <p class="section-subtitle">Find exactly what you need for your apiary, from protective clothing to complete hive kits.</p>
+                <p class="section-subtitle">Find exactly what you need for your apiary, from protective clothing to
+                    complete hive kits.</p>
             </div>
             <!-- 6 Cards Layout -->
             <div class="card-grid cols-3">
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Complete+Hives" alt="Complete Hives" class="card-img">
+                        <img src="assets/images/categories/complete-hives.png" alt="Complete Hives" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Complete Hives</h3>
                         <p class="card-desc">Starter kits and professional Langstroth hives ready for your bees.</p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Hives</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Hives</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Protective+Gear" alt="Protective Gear" class="card-img">
+                        <img src="assets/images/categories/protective-gear.png" alt="Protective Gear" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Protective Gear</h3>
                         <p class="card-desc">High-quality suits, gloves, and veils to keep you safe while working.</p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Gear</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Gear</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Tools" alt="Tools & Smokers" class="card-img">
+                        <img src="assets/images/categories/tools-smokers.png" alt="Tools & Smokers" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Tools & Smokers</h3>
                         <p class="card-desc">Essential hive tools, smokers, and brushes for everyday apiary tasks.</p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Tools</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Tools</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Extraction" alt="Extraction Equipment" class="card-img">
+                        <img src="assets/images/categories/extraction-equipment.png" alt="Extraction Equipment"
+                            class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Extraction Equipment</h3>
-                        <p class="card-desc">Spinners, uncapping knives, and strainers for the perfect honey harvest.</p>
+                        <p class="card-desc">Spinners, uncapping knives, and strainers for the perfect honey harvest.
+                        </p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Extractors</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Extractors</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Queen+Rearing" alt="Queen Rearing" class="card-img">
+                        <img src="assets/images/categories/queen-rearing.png" alt="Queen Rearing" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Queen Rearing</h3>
                         <p class="card-desc">Specialized equipment for breeding and introducing new queens.</p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Queen Tools</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Queen Tools</a>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Pest+Control" alt="Pest Control" class="card-img">
+                        <img src="assets/images/categories/pest-control.png" alt="Pest Control" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Pest Control</h3>
                         <p class="card-desc">Treatments and preventative measures for Varroa mites and other pests.</p>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-outline" style="width: 100%;">Shop Treatments</a>
+                            <a href="shop.html" class="btn btn-outline" style="width: 100%;">Shop Treatments</a>
                         </div>
                     </div>
                 </div>
@@ -205,28 +221,34 @@
         <div class="container text-center">
             <h2 class="section-title">Your Path to Beekeeping</h2>
             <p class="section-subtitle">We make starting an apiary simple, structured, and enjoyable for beginners.</p>
-            
+
             <div class="grid grid-cols-3 gap-8" style="margin-top: 4rem;">
                 <div class="flex flex-col items-center">
-                    <div class="btn-icon" style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
+                    <div class="btn-icon"
+                        style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
                         1
                     </div>
                     <h3 class="card-title">Take the Course</h3>
-                    <p class="card-desc">Enroll in our online Beekeeping 101 course to understand the fundamentals of hive management.</p>
+                    <p class="card-desc">Enroll in our online Beekeeping 101 course to understand the fundamentals of
+                        hive management.</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="btn-icon" style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
+                    <div class="btn-icon"
+                        style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
                         2
                     </div>
                     <h3 class="card-title">Get Equipment</h3>
-                    <p class="card-desc">Order your starter kit and protective gear perfectly tailored for first-year beekeepers.</p>
+                    <p class="card-desc">Order your starter kit and protective gear perfectly tailored for first-year
+                        beekeepers.</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="btn-icon" style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
+                    <div class="btn-icon"
+                        style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--primary-color); color:#fff; font-size:2rem; margin-bottom:1.5rem;">
                         3
                     </div>
                     <h3 class="card-title">Welcome the Bees</h3>
-                    <p class="card-desc">Install your first package of bees or nuc and begin your rewarding journey as an apiarist.</p>
+                    <p class="card-desc">Install your first package of bees or nuc and begin your rewarding journey as
+                        an apiarist.</p>
                 </div>
             </div>
         </div>
@@ -237,38 +259,45 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">What Our Beekeepers Say</h2>
-                <p class="section-subtitle">Success stories from individuals who started their journey with HiveMaster.</p>
+                <p class="section-subtitle">Success stories from individuals who started their journey with HiveMaster.
+                </p>
             </div>
             <div class="card-grid cols-3">
                 <div class="card" style="padding: 2rem;">
                     <div class="flex items-center gap-4" style="margin-bottom: 1.5rem;">
-                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=S" alt="Sarah M." style="border-radius: 50%;">
+                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=S" alt="Sarah M."
+                            style="border-radius: 50%;">
                         <div>
                             <h4 style="margin: 0;">Sarah Jenkins</h4>
                             <p style="margin: 0; font-size: 0.875rem;">Hobbyist Beekeeper</p>
                         </div>
                     </div>
-                    <p class="card-desc">"The beginner course gave me the confidence I needed. My first hive is thriving and I'm ready to harvest my first batch of honey!"</p>
+                    <p class="card-desc">"The beginner course gave me the confidence I needed. My first hive is thriving
+                        and I'm ready to harvest my first batch of honey!"</p>
                 </div>
                 <div class="card" style="padding: 2rem;">
                     <div class="flex items-center gap-4" style="margin-bottom: 1.5rem;">
-                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=D" alt="David M." style="border-radius: 50%;">
+                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=D" alt="David M."
+                            style="border-radius: 50%;">
                         <div>
                             <h4 style="margin: 0;">David Miller</h4>
                             <p style="margin: 0; font-size: 0.875rem;">Commercial Apiarist</p>
                         </div>
                     </div>
-                    <p class="card-desc">"I source all my protective gear and extraction tools from HiveMaster. The quality is unmatched and shipping is always incredibly fast."</p>
+                    <p class="card-desc">"I source all my protective gear and extraction tools from HiveMaster. The
+                        quality is unmatched and shipping is always incredibly fast."</p>
                 </div>
                 <div class="card" style="padding: 2rem;">
                     <div class="flex items-center gap-4" style="margin-bottom: 1.5rem;">
-                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=E" alt="Elena P." style="border-radius: 50%;">
+                        <img src="https://placehold.co/60x60/f59e0b/1f2937?text=E" alt="Elena P."
+                            style="border-radius: 50%;">
                         <div>
                             <h4 style="margin: 0;">Elena Parker</h4>
                             <p style="margin: 0; font-size: 0.875rem;">Educator</p>
                         </div>
                     </div>
-                    <p class="card-desc">"As a biology teacher integrating an observation hive in my school, the support and safety advice from their team has been phenomenal."</p>
+                    <p class="card-desc">"As a biology teacher integrating an observation hive in my school, the support
+                        and safety advice from their team has been phenomenal."</p>
                 </div>
             </div>
         </div>
@@ -277,17 +306,22 @@
     <!-- Section 5: CTA -->
     <section class="section-padding">
         <div class="container">
-            <div class="card" style="background-color: var(--secondary-color); color: #fff; padding: 4rem 2rem; text-align: center; border: none;">
+            <div class="card"
+                style="background-color: var(--secondary-color); color: #fff; padding: 4rem 2rem; text-align: center; border: none;">
                 <h2 style="color: #fff; font-size: 2.5rem; margin-bottom: 1rem;">Ready to Harvest Your Own Honey?</h2>
-                <p style="color: #9ca3af; font-size: 1.125rem; max-width: 600px; margin: 0 auto 2rem;">Join thousands of successful beekeepers. Get started with our curated beginner kits today.</p>
+                <p style="color: #9ca3af; font-size: 1.125rem; max-width: 600px; margin: 0 auto 2rem;">Join thousands of
+                    successful beekeepers. Get started with our curated beginner kits today.</p>
                 <div class="flex justify-center gap-4 flex-wrap">
                     <a href="register.html" class="btn btn-primary">Create an Account</a>
-                    <a href="pricing.html" class="btn btn-outline" style="border-color: #374151; color: #fff;">View Starter Kits</a>
+                    <a href="pricing.html" class="btn btn-outline" style="border-color: #374151; color: #fff;">View
+                        Starter Kits</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -297,12 +331,44 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col footer-dark-text">
@@ -317,18 +383,21 @@
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Resources</h3>
                     <ul>
-                        <li><a href="blog.html">Blog & Guides</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Contact Us</h3>
                     <ul>
-                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
-                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
                     </ul>
                 </div>
             </div>
@@ -341,4 +410,5 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

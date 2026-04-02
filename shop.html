@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Supplies - HiveMaster Beekeeping</title>
+    <meta name="description" content="Premium beekeeping supplies, hives, and tools.">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header {
+            background-color: var(--bg-alt);
+            padding-block: 4rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .filter-sidebar {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .filter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .filter-item:hover,
+        .filter-item.active {
+            color: var(--primary-color);
+        }
+
+        .price-range {
+            margin-top: 1rem;
+        }
+
+        .shop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .sort-select {
+            width: auto;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-sidebar {
+                display: none;
+            }
+
+            /* Hidden on mobile for simplicity, could be a drawer */
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/Bee_FreePhoto1.png');
+            min-height: 500px;
+            /* Reduced height for shop subpage */
+        }
+
+        .hero-content {
+            padding-top: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="hexagon" class="logo-icon"></i>
+                <span>HiveMaster</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions flex items-center gap-2">
+                <div class="nav-auth flex items-center gap-2">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Store Focus) -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium <span class="text-primary">Beekeeping</span> Equipment</h1>
+                <p class="hero-subtitle">Everything you need to start and maintain your hive, from high-quality
+                    woodenware to protective gear and tools.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary smooth-scroll">Shop Now <i
+                            data-lucide="shopping-bag"></i></a>
+                    <a href="#categories" class="btn btn-outline smooth-scroll">Browse Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listing Section -->
+    <section class="section-padding bg-alt" id="products">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Professional Supplies</h2>
+                <p class="section-subtitle">Durable, field-tested equipment trusted by professional beekeepers
+                    worldwide.</p>
+            </div>
+
+            <div class="card-grid cols-4" id="productGrid">
+                <!-- Product 1 -->
+                <div class="card product-card" data-category="hives">
+                    <div class="card-img-wrapper" style="aspect-ratio: 1/1;">
+                        <img src="assets/images/Langstroth Beehive Box.png" alt="Beehive Box" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Langstroth Beehive Box</h3>
+                        <p class="card-desc">10-frame deep super made from premium cedar wood. Includes 10 frames.</p>
+                        <div class="card-footer"
+                            style="padding-top: 1rem; border-top: 1px solid var(--border-color); margin-top: 1rem;">
+                            <span
+                                style="font-weight: 700; color: var(--primary-color); font-size: 1.25rem;">$149.99</span>
+                            <div class="flex gap-2">
+                                <a href="product-details.html?id=beehive" class="btn-icon" title="View Details"><i
+                                        data-lucide="eye"></i></a>
+                                <button class="btn btn-primary add-to-cart" style="padding: 0.5rem 1rem;"><i
+                                        data-lucide="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="card product-card" data-category="gear">
+                    <div class="card-img-wrapper" style="aspect-ratio: 1/1;">
+                        <img src="assets/images/Aero-Vent Pro Suit.png" alt="Bee Suit" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ventilated Professional Bee Suit</h3>
+                        <p class="card-desc">Triple-layer mesh for maximum airflow and sting protection. Includes veil.
+                        </p>
+                        <div class="card-footer"
+                            style="padding-top: 1rem; border-top: 1px solid var(--border-color); margin-top: 1rem;">
+                            <span
+                                style="font-weight: 700; color: var(--primary-color); font-size: 1.25rem;">$129.50</span>
+                            <div class="flex gap-2">
+                                <a href="product-details.html?id=suit" class="btn-icon" title="View Details"><i
+                                        data-lucide="eye"></i></a>
+                                <button class="btn btn-primary add-to-cart" style="padding: 0.5rem 1rem;"><i
+                                        data-lucide="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="card product-card" data-category="tools">
+                    <div class="card-img-wrapper" style="aspect-ratio: 1/1;">
+                        <img src="assets/images/stainless_steel_bee_smoker.png" alt="Smoker Tool" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Stainless Steel Bee Smoker</h3>
+                        <p class="card-desc">Heavy-duty smoker with heat shield and protective bird cage. Leather
+                            bellows.</p>
+                        <div class="card-footer"
+                            style="padding-top: 1rem; border-top: 1px solid var(--border-color); margin-top: 1rem;">
+                            <span
+                                style="font-weight: 700; color: var(--primary-color); font-size: 1.25rem;">$38.00</span>
+                            <div class="flex gap-2">
+                                <a href="product-details.html?id=smoker" class="btn-icon" title="View Details"><i
+                                        data-lucide="eye"></i></a>
+                                <button class="btn btn-primary add-to-cart" style="padding: 0.5rem 1rem;"><i
+                                        data-lucide="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="card product-card" data-category="processing">
+                    <div class="card-img-wrapper" style="aspect-ratio: 1/1;">
+                        <img src="assets/images/Honey_Extractor_for-Beekeeping.png" alt="Honey Extractor"
+                            class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">24-Frame Honey Extractor</h3>
+                        <p class="card-desc">Electric stainless steel radial extractor for high volume honey processing.
+                        </p>
+                        <div class="card-footer"
+                            style="padding-top: 1rem; border-top: 1px solid var(--border-color); margin-top: 1rem;">
+                            <span
+                                style="font-weight: 700; color: var(--primary-color); font-size: 1.25rem;">$899.00</span>
+                            <div class="flex gap-2">
+                                <a href="product-details.html?id=extractor" class="btn-icon" title="View Details"><i
+                                        data-lucide="eye"></i></a>
+                                <button class="btn btn-primary add-to-cart" style="padding: 0.5rem 1rem;"><i
+                                        data-lucide="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="section-padding bg-alt" style="border-top: 1px solid var(--border-color);" id="categories">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Find exactly what you need for your specific beekeeping tasks.</p>
+            </div>
+
+            <div class="card-grid cols-4" style="margin-top: 3rem;">
+                <!-- Category 1 -->
+                <div class="card text-center" style="padding: 2rem;">
+                    <h4 style="color: var(--primary-color);">Beehives</h4>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-top: 0.5rem;">Complete Langstroth and flow
+                        hives for every apiary size.</p>
+                </div>
+                <!-- Category 2 -->
+                <div class="card text-center" style="padding: 2rem;">
+                    <h4 style="color: var(--primary-color);">Hive Tools</h4>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-top: 0.5rem;">Essential smokers, scrapers,
+                        and brushes for hive management.</p>
+                </div>
+                <!-- Category 3 -->
+                <div class="card text-center" style="padding: 2rem;">
+                    <h4 style="color: var(--primary-color);">Protective Gear</h4>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-top: 0.5rem;">Ventilated suits, gloves, and
+                        veils for maximum safety.</p>
+                </div>
+                <!-- Category 4 -->
+                <div class="card text-center" style="padding: 2rem;">
+                    <h4 style="color: var(--primary-color);">Honey Processing</h4>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-top: 0.5rem;">Extractors, strainers, and
+                        bottling supplies for your harvest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trust / Quality Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Why Trust HiveMaster Supplies?</h2>
+                <p class="section-subtitle">We are committed to providing the highest quality equipment for the bee and
+                    the beekeeper.</p>
+            </div>
+
+            <div class="card-grid cols-4" style="margin-top: 3rem;">
+                <div class="text-center">
+                    <div class="btn-icon"
+                        style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">High-quality equipment</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">Grade A materials designed to survive harsh
+                        weather and intensive use.</p>
+                </div>
+                <div class="text-center">
+                    <div class="btn-icon"
+                        style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Trusted by professionals</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">Used daily by some of the largest commercial
+                        apiaries across the country.</p>
+                </div>
+                <div class="text-center">
+                    <div class="btn-icon"
+                        style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Durable and long-lasting</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">Investment-grade equipment that will serve your
+                        apiary for decades.</p>
+                </div>
+                <div class="text-center">
+                    <div class="btn-icon"
+                        style="background: var(--bg-alt); color: var(--primary-color); margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Fast and reliable delivery</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">Safe shipping methods ensure your equipment
+                        arrives in perfect condition.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 4rem;">
+                <a href="#products" class="btn btn-primary smooth-scroll">Explore Our Products <i
+                        data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1.5rem;">
+                        <i data-lucide="hexagon" class="logo-icon"></i>
+                        <span>HiveMaster</span>
+                    </a>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Resources</h3>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Contact Us</h3>
+                    <ul>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HiveMaster Beekeeping Education & Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Smooth scroll for internal links
+            const scrollLinks = document.querySelectorAll('.smooth-scroll');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80; // Navbar height offset
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const products = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    products.forEach(product => {
+                        if (filter === 'all' || product.getAttribute('data-category') === filter) {
+                            product.style.display = 'block';
+                            // Scroll to products to show the change
+                            const productsSection = document.getElementById('products');
+                            const offset = 80;
+                            const targetPosition = productsSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

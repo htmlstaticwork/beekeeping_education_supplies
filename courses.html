@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Beekeeping Education & Supplies</title>
+    <meta name="description" content="Explore our beekeeping courses and master the art of apiary management.">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--radius-md);
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .filter-btn:hover:not(.active) {
+            background: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .course-card.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card {
+            animation: fadeIn 0.4s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <i data-lucide="hexagon" class="logo-icon"></i>
+                <span>HiveMaster</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link active">Courses</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <div class="nav-auth flex items-center gap-2">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Education Focus) -->
+    <section class="hero" id="home"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/course_header_image.png'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 500px;">
+        <div class="container">
+            <div class="hero-content" style="padding-top: 4rem;">
+                <h1 class="hero-title">Master the Art of <span class="text-primary">Beekeeping</span></h1>
+                <p class="hero-subtitle">Learn hive management, honey production, and bee care step-by-step with our
+                    comprehensive online courses.</p>
+                <div class="hero-btns">
+                    <a href="#courses" class="btn btn-primary smooth-scroll">Browse Courses <i
+                            data-lucide="arrow-down"></i></a>
+                    <a href="course-details.html" class="btn btn-outline">Start Learning Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="section-padding bg-alt" id="courses">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Featured Courses</h2>
+                <p class="section-subtitle">Jumpstart your apiary journey with our most popular learning programs.</p>
+            </div>
+            <div class="card-grid cols-4">
+                <!-- Course 1 -->
+                <div class="card course-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/courses/beginner.png" alt="Beginner Beekeeping" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Beginner Beekeeping</h3>
+                        <p class="card-desc">The perfect starting point for new apiarists. Learn the basics of bee
+                            biology and hive setup.</p>
+                        <div class="course-meta">
+                            <span><i data-lucide="clock" style="width:14px;"></i> 2 hours</span>
+                            <span><i data-lucide="book-open" style="width:14px;"></i> 6 lessons</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="course-details.html" class="btn btn-outline" style="width: 100%;">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="card course-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/courses/hive-mgmt.png" alt="Hive Management Basics" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Hive Management Basics</h3>
+                        <p class="card-desc">Master the seasonal tasks required to keep your colonies healthy and
+                            productive year-round.</p>
+                        <div class="course-meta">
+                            <span><i data-lucide="clock" style="width:14px;"></i> 3 hours</span>
+                            <span><i data-lucide="book-open" style="width:14px;"></i> 8 lessons</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="course-details.html" class="btn btn-outline" style="width: 100%;">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="card course-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/courses/honey-extraction.png" alt="Honey Extraction Techniques"
+                            class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Honey Extraction Techniques</h3>
+                        <p class="card-desc">Learn the professional way to harvest and process honey while maintaining
+                            the highest quality.</p>
+                        <div class="course-meta">
+                            <span><i data-lucide="clock" style="width:14px;"></i> 2.5 hours</span>
+                            <span><i data-lucide="book-open" style="width:14px;"></i> 5 lessons</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="course-details.html" class="btn btn-outline" style="width: 100%;">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 4 -->
+                <div class="card course-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/courses/bee-health.png" alt="Bee Health & Disease Control"
+                            class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bee Health & Disease Control</h3>
+                        <p class="card-desc">Identify and treat common pests and diseases to ensure the longevity of
+                            your bee colonies.</p>
+                        <div class="course-meta">
+                            <span><i data-lucide="clock" style="width:14px;"></i> 4 hours</span>
+                            <span><i data-lucide="book-open" style="width:14px;"></i> 10 lessons</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="course-details.html" class="btn btn-outline" style="width: 100%;">View Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path / Categories Section -->
+    <section class="section-padding" id="categories">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Your Learning Path</h2>
+                <p class="section-subtitle">Structured education paths tailored to your current experience level.</p>
+            </div>
+            <div class="card-grid cols-3">
+                <div class="card text-center" style="padding: 2.5rem;">
+                    <div class="btn-icon"
+                        style="background: var(--primary-color); color: #fff; margin: 0 auto 1.5rem; width: 60px; height: 60px;">
+                        <i data-lucide="baby"></i>
+                    </div>
+                    <h3 class="card-title">Beginner</h3>
+                    <p class="card-desc">For those who have never kept bees but are eager to start their first hive
+                        safely and correctly.</p>
+                    <a href="#courses" class="btn btn-primary smooth-scroll" style="margin-top: 1rem;">Start
+                        Learning</a>
+                </div>
+                <div class="card text-center" style="padding: 2.5rem;">
+                    <div class="btn-icon"
+                        style="background: var(--secondary-color); color: #fff; margin: 0 auto 1.5rem; width: 60px; height: 60px;">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="card-title">Intermediate</h3>
+                    <p class="card-desc">For beekeepers with 1-2 years of experience looking to expand their apiary and
+                        increase honey yield.</p>
+                    <a href="#courses" class="btn btn-primary smooth-scroll" style="margin-top: 1rem;">Start
+                        Learning</a>
+                </div>
+                <div class="card text-center" style="padding: 2.5rem;">
+                    <div class="btn-icon"
+                        style="background: var(--text-main); color: #fff; margin: 0 auto 1.5rem; width: 60px; height: 60px;">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3 class="card-title">Advanced</h3>
+                    <p class="card-desc">Master level techniques including queen rearing, commercial production, and
+                        specialized bee health management.</p>
+                    <a href="#courses" class="btn btn-primary smooth-scroll" style="margin-top: 1rem;">Start
+                        Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Why Learn Section -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="grid grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Why Learn with HiveMaster?</h2>
+                    <p class="section-subtitle" style="text-align: left; margin-left: 0;">Our education platform is
+                        designed by master apiarists to give you the most practical and up-to-date knowledge in the
+                        industry.</p>
+
+                    <div class="flex flex-col gap-6 mt-8">
+                        <div class="flex gap-4">
+                            <div class="text-primary"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">Increase honey production</h4>
+                                <p class="text-muted" style="margin-top: 0.25rem;">Learn the secrets to maximizing your
+                                    harvest without stressing your colonies.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-primary"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">Maintain healthy bee colonies</h4>
+                                <p class="text-muted" style="margin-top: 0.25rem;">Proven methods for pest management
+                                    and disease prevention that actually work.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-primary"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">Learn modern beekeeping techniques</h4>
+                                <p class="text-muted" style="margin-top: 0.25rem;">Stay ahead with the latest tools and
+                                    scientific approaches to apiary management.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-primary"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">Avoid common mistakes</h4>
+                                <p class="text-muted" style="margin-top: 0.25rem;">Save time and money by avoiding the
+                                    pitfalls that many new beekeepers face.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="course-details.html" class="btn btn-primary" style="margin-top: 2.5rem;">Start Your Journey
+                        <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="assets/images/courses/hive-mgmt.png" alt="Beekeeping Learning"
+                        style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1.5rem;">
+                        <i data-lucide="hexagon" class="logo-icon"></i>
+                        <span>HiveMaster</span>
+                    </a>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Resources</h3>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-dark-text">
+                    <h3 class="footer-col-title">Contact Us</h3>
+                    <ul>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HiveMaster Beekeeping Education & Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Smooth scroll for internal links
+            const scrollLinks = document.querySelectorAll('.smooth-scroll');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80; // Navbar height offset
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

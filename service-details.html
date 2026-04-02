@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,27 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .page-header { background-color: var(--bg-alt); padding-block: 6rem 4rem; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .details-content img { border-radius: var(--radius-lg); margin-block: 2rem; }
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/service_detailsimg.png');
+            background-size: cover;
+            background-position: center;
+            padding-block: 8rem 6rem;
+            text-align: center;
+            color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-image 0.5s ease;
+        }
+
+        .details-content img {
+            border-radius: var(--radius-lg);
+            margin-block: 2rem;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -26,30 +42,41 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link active">Courses</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-icon dark-toggle"><i data-lucide="moon"></i></button>
-                <button class="btn-icon rtl-toggle"><i data-lucide="languages"></i></button>
-                <div class="nav-auth flex gap-4">
+                <div class="nav-auth flex items-center gap-2">
                     <a href="login.html" class="btn btn-outline">Login</a>
                     <a href="register.html" class="btn btn-primary">Sign Up</a>
                 </div>
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
     <!-- Header Section 1: Hero -->
-    <header class="page-header">
+    <header class="page-header" id="dynamic-header">
         <div class="container">
-            <div style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.1); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem;">Premium Service</div>
-            <h1 class="hero-title">Educational Workshops</h1>
-            <p class="hero-subtitle">Interactive online and in-person courses designed to take you from a curious beginner to a confident apiarist.</p>
+            <div id="service-badge"
+                style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.2); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem;">
+                Premium Service</div>
+            <h1 class="hero-title" id="hero-title">Educational Workshops</h1>
+            <p class="hero-subtitle" id="hero-subtitle">Interactive online and in-person courses designed to take you from a curious
+                beginner to a confident apiarist.</p>
         </div>
     </header>
 
@@ -58,12 +85,19 @@
         <div class="container">
             <div class="grid grid-cols-2 gap-8" style="align-items: center;">
                 <div>
-                    <img src="https://placehold.co/800x600/f59e0b/1f2937?text=Workshop+Session" alt="Workshop" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                    <img id="main-image" src="assets/images/Educational Workshops_img.png" alt="Workshop"
+                        style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; aspect-ratio: 4/3; object-fit: cover;">
                 </div>
                 <div>
-                    <h2 class="section-title">Comprehensive Beekeeping Education</h2>
-                    <p class="card-desc" style="font-size: 1.125rem;">Our educational workshops are meticulously structured to cover the complete lifecycle of a honeybee colony. We provide both asynchronous video courses for remote learning, as well as hands-on field days in our teaching apiaries.</p>
-                    <p class="card-desc" style="font-size: 1.125rem;">Led by master beekeepers, these sessions blend scientific entomology with practical, time-tested hive management techniques. You will learn to properly inspect frames, identify diseases early, and safely harvest honey.</p>
+                    <h2 class="section-title" id="description-title">Comprehensive Beekeeping Education</h2>
+                    <div id="description-text">
+                        <p class="card-desc" style="font-size: 1.125rem;">Our educational workshops are meticulously
+                            structured to cover the complete lifecycle of a honeybee colony. We provide both asynchronous
+                            video courses for remote learning, as well as hands-on field days in our teaching apiaries.</p>
+                        <p class="card-desc" style="font-size: 1.125rem;">Led by master beekeepers, these sessions blend
+                            scientific entomology with practical, time-tested hive management techniques. You will learn to
+                            properly inspect frames, identify diseases early, and safely harvest honey.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,30 +106,11 @@
     <!-- Section 3: Key Benefits -->
     <section class="section-padding bg-alt">
         <div class="container text-center">
-            <h2 class="section-title">What You'll Learn</h2>
-            <p class="section-subtitle">Core competencies covered in our specialized programs.</p>
-            
-            <div class="card-grid cols-4" style="text-align: left;">
-                <div class="card" style="padding: 2rem;">
-                    <i data-lucide="microscope" class="text-primary" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
-                    <h3 class="card-title">Disease Identification</h3>
-                    <p class="card-desc">Recognize the signs of Varroa mites, American Foulbrood, and Chalkbrood before they devastate the colony.</p>
-                </div>
-                <div class="card" style="padding: 2rem;">
-                    <i data-lucide="flower" class="text-primary" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
-                    <h3 class="card-title">Nectar Flows</h3>
-                    <p class="card-desc">Understand local flora bloom times and how to time your supering for maximum honey yield.</p>
-                </div>
-                <div class="card" style="padding: 2rem;">
-                    <i data-lucide="sun-snow" class="text-primary" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
-                    <h3 class="card-title">Overwintering & Prep</h3>
-                    <p class="card-desc">Prepare your hives to survive harsh winters by managing moisture and ensuring adequate stores.</p>
-                </div>
-                <div class="card" style="padding: 2rem;">
-                    <i data-lucide="settings-2" class="text-primary" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
-                    <h3 class="card-title">Swarm Prevention</h3>
-                    <p class="card-desc">Learn advanced splitting techniques and population management to prevent costly swarming.</p>
-                </div>
+            <h2 class="section-title" id="benefits-title">What You'll Learn</h2>
+            <p class="section-subtitle" id="benefits-subtitle">Core competencies covered in our specialized programs.</p>
+
+            <div class="card-grid cols-4" id="benefits-grid" style="text-align: left;">
+                <!-- Dynamically Inserted -->
             </div>
         </div>
     </section>
@@ -105,36 +120,20 @@
         <div class="container">
             <div class="card" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
                 <div class="text-center" style="margin-bottom: 2rem;">
-                    <h2 class="section-title">Ready to Enroll?</h2>
-                    <p class="card-desc">Get access to our complete library of workshops starting at just $49/month or book a private session.</p>
+                    <h2 class="section-title" id="cta-title">Ready to Enroll?</h2>
+                    <p class="card-desc" id="cta-desc">Get access to our complete library of workshops starting at just $49/month or
+                        book a private session.</p>
                 </div>
-                <div class="flex flex-col gap-4">
-                    <div class="card bg-alt" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 1.5rem; border-color: var(--primary-color);">
-                        <div>
-                            <h3 style="margin-bottom: 0.25rem;">Online Masterclass Access</h3>
-                            <p style="margin: 0; color: var(--text-muted);">Access 50+ hours of video tutorials.</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <span style="font-weight: bold; font-size: 1.5rem;">$49<span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">/mo</span></span>
-                            <button class="btn btn-primary">Select</button>
-                        </div>
-                    </div>
-                    <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 1.5rem;">
-                        <div>
-                            <h3 style="margin-bottom: 0.25rem;">In-Person Field Day</h3>
-                            <p style="margin: 0; color: var(--text-muted);">A full day of hands-on training at our apiary.</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <span style="font-weight: bold; font-size: 1.5rem;">$199<span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">/day</span></span>
-                            <button class="btn btn-outline">Select</button>
-                        </div>
-                    </div>
+                <div class="flex flex-col gap-4" id="pricing-cards">
+                    <!-- Dynamically Inserted -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
+        <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -143,12 +142,43 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through
+                        comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col footer-dark-text">
@@ -163,18 +193,21 @@
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Resources</h3>
                     <ul>
-                        <li><a href="blog.html">Blog & Guides</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Contact Us</h3>
                     <ul>
-                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
-                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
                     </ul>
                 </div>
             </div>
@@ -186,12 +219,248 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+    <script>
+        const servicesData = {
+            'apiary-consulting': {
+                title: "Apiary Consulting",
+                subtitle: "Expert personalized advice for setting up and managing healthy honeybee colonies.",
+                badge: "Specialist Advice",
+                mainImage: "assets/images/Apiary Consulting.png",
+                descTitle: "Professional Apiary Assessment",
+                description: [
+                    "We provide comprehensive site assessments, colony health audits, and personalized management plans. Our experts help you navigate everything from local regulations to optimal hive placement.",
+                    "Our consultants are experienced in both small-scale backyard apiaries and large commercial operations, ensuring you receive advice that scales with your goals."
+                ],
+                benefitsTitle: "Our Consultation Focus",
+                benefitsSubtitle: "Strategic pillars for a successful and healthy apiary.",
+                benefits: [
+                    { icon: 'map-pin', title: 'Site Optimization', desc: 'Analyze forage, sun exposure, and wind protection for your specific geography.' },
+                    { icon: 'shield-check', title: 'Health Audits', desc: 'Regular varroa mite checks and professional disease screening protocols.' },
+                    { icon: 'calendar', title: 'Strategic Planning', desc: 'Seasonal beekeeping calendars tailored to your local environment and microclimate.' },
+                    { icon: 'box', title: 'Equipment Consultation', desc: 'Professional advice on selecting the right hive type and protective gear.' }
+                ],
+                ctaTitle: "Book a Consultation",
+                ctaDesc: "Let a master beekeeper evaluate your setup or project.",
+                pricing: [
+                    { title: "On-Site Single Session", price: "149", unit: "/visit", desc: "A 2-hour thorough apiary audit and Q&A session.", active: true },
+                    { title: "Quarterly Health Package", price: "399", unit: "/year", desc: "Four seasonal visits ensuring year-round colony stability.", active: false }
+                ]
+            },
+            'workshops': {
+                title: "Educational Workshops",
+                subtitle: "Interactive online and in-person courses designed for every stage of your beekeeping journey.",
+                badge: "Educational",
+                mainImage: "assets/images/Educational Workshops_img.png",
+                descTitle: "Comprehensive Beekeeping Education",
+                description: [
+                    "Our educational workshops are meticulously structured to cover the complete lifecycle of a honeybee colony. We provide both asynchronous video courses for remote learning, as well as hands-on field days.",
+                    "Led by master beekeepers, these sessions blend scientific entomology with practical, time-tested hive management techniques. You will learn to properly inspect frames and safely harvest honey."
+                ],
+                benefitsTitle: "What You'll Learn",
+                benefitsSubtitle: "Core competencies covered in our specialized programs.",
+                benefits: [
+                    { icon: 'microscope', title: 'Disease Identification', desc: 'Recognize the signs of Varroa mites and Foulbrood before they devastate the colony.' },
+                    { icon: 'flower', title: 'Nectar Flows', desc: 'Understand local flora bloom times and how to time your supering for maximum yield.' },
+                    { icon: 'sun-snow', title: 'Overwintering', desc: 'Prepare your hives to survive harsh winters by managing moisture and stores.' },
+                    { icon: 'settings-2', title: 'Swarm Prevention', desc: 'Learn advanced splitting techniques and population management to prevent swarming.' }
+                ],
+                ctaTitle: "Ready to Enroll?",
+                ctaDesc: "Get access to our complete library of workshops or book a private session.",
+                pricing: [
+                    { title: "Online Masterclass Access", price: "49", unit: "/mo", desc: "Access 50+ hours of video tutorials and monthly live webinars.", active: true },
+                    { title: "In-Person Field Day", price: "199", unit: "/day", desc: "A full day of hands-on training at our professional apiary.", active: false }
+                ]
+            },
+            'extraction': {
+                title: "Honey Extraction",
+                subtitle: "Professional-grade extraction services for hobbyists and commercial beekeepers.",
+                badge: "High Yield",
+                mainImage: "assets/images/Honey Extraction.png",
+                descTitle: "From Frame to Bottle",
+                description: [
+                    "Save hours of manual labor with our automated extraction equipment. We handle everything from uncapping to centrifugation and coarse filtering, returning clean frames and bottled honey.",
+                    "Our facility is maintained to the highest standards of food safety, ensuring your harvest remains pure and high-quality."
+                ],
+                benefitsTitle: "Extraction Efficiency",
+                benefitsSubtitle: "Maximized recovery with minimal labor on your part.",
+                benefits: [
+                    { icon: 'zap', title: 'High Efficiency', desc: 'Extract dozens of frames in a fraction of the time required for manual cranking.' },
+                    { icon: 'sparkles', title: 'Clean Facility', desc: 'Certified sanitary environment for professional food processing.' },
+                    { icon: 'droplet', title: 'Minimal Waste', desc: 'Optimized high-speed centrifuges recover up to 98% of available honey stores.' },
+                    { icon: 'package-plus', title: 'Bottling Support', desc: 'Automatic filling and labeling services at various scale levels.' }
+                ],
+                ctaTitle: "Process Your Harvest",
+                ctaDesc: "Contact us to schedule your extraction window.",
+                pricing: [
+                    { title: "Standard Extraction Fee", price: "2", unit: "/frame", desc: "Per medium or shallow frame. Minimum 20 frames required.", active: true },
+                    { title: "DIY Facility Rental", price: "249", unit: "/day", desc: "Rent our complete station and process everything yourself.", active: false }
+                ]
+            },
+            'relocation': {
+                title: "Swarm Relocation",
+                subtitle: "Safe, humane, and professional honeybee removal and relocation services.",
+                badge: "Emergency Service",
+                mainImage: "assets/images/Swarm Relocation.png",
+                descTitle: "Humane Hive Removal",
+                description: [
+                    "Don't spray or panic. Our specialists safely capture swarms or established feral colonies and move them to local apiaries where they can thrive and pollinate locally.",
+                    "We specialize in 'soft' removals that prioritize the survival of the queen and the integrity of the colony."
+                ],
+                benefitsTitle: "Removal Standards",
+                benefitsSubtitle: "Prioritizing bee health and property safety.",
+                benefits: [
+                    { icon: 'leaf', title: 'Eco-Friendly', desc: 'We never use toxic chemicals or pesticides to remove bees from your property.' },
+                    { icon: 'heart', title: 'Colony Rescue', desc: '95% survival rate for relocated colonies thanks to specialized vacuum tech.' },
+                    { icon: 'home', title: 'Structural Advice', desc: 'Advice on sealing entry points post-removal to prevent future scout interest.' },
+                    { icon: 'award', title: 'Certified Experts', desc: 'Insured professionals with specialized industrial removal gear.' }
+                ],
+                ctaTitle: "Request Removal",
+                ctaDesc: "Fast response times for swarms in transit or established colonies.",
+                pricing: [
+                    { title: "Standard Swarm Capture", price: "99", unit: " flat", desc: "Removal of accessible swarms on branches or fences.", active: true },
+                    { title: "Complex Cut-out", price: "299", unit: " min", desc: "Removal from inside walls or structures (quote required).", active: false }
+                ]
+            },
+            'maintenance': {
+                title: "Hive Maintenance",
+                subtitle: "Subscription-based hive care and inspections for the hands-off enthusiast.",
+                badge: "Worry-Free",
+                mainImage: "assets/images/Hive Maintenance.png",
+                descTitle: "Expert Colony Management",
+                description: [
+                    "Love having bees but don't have the time to inspect them? Our professionals visit monthly to perform inspections, treatments, and required maintenance to keep your bees healthy.",
+                    "We provide detailed reports after every visit, so you stay connected to your bees without the sticky hands."
+                ],
+                benefitsTitle: "Care Package Includes",
+                benefitsSubtitle: "Complete peace of mind for your precious pollinators.",
+                benefits: [
+                    { icon: 'eye', title: 'Monthly Inspections', desc: 'Professional eyes on every frame to spot subtle queen or health issues.' },
+                    { icon: 'flask-conical', title: 'Treatment Mgmt', desc: 'Timely organic mite and pest treatments delivered at the right moment.' },
+                    { icon: 'archive', title: 'Honey Harvesting', desc: 'We handle the heavy lifting and extraction, leaving jars on your porch.' },
+                    { icon: 'file-text', title: 'Digital Reports', desc: 'Full inspection notes and photos delivered directly to your dashboard.' }
+                ],
+                ctaTitle: "Select a Care Plan",
+                ctaDesc: "Choose the level of involvement that works for you.",
+                pricing: [
+                    { title: "Basic Maintenance", price: "79", unit: "/mo", desc: "Monthly inspection and basic health management (1 hive).", active: true },
+                    { title: "Premium Care", price: "149", unit: "/mo", desc: "Unlimited callouts, full harvest service, and up to 3 hives.", active: false }
+                ]
+            },
+            'ag-exemption': {
+                title: "Ag Exemption Services",
+                subtitle: "Strategic beekeeping setups to qualify your property for agricultural appraisal.",
+                badge: "Tax Strategy",
+                mainImage: "assets/images/Ag Exemption Services.png",
+                descTitle: "Bees for Tax Qualification",
+                description: [
+                    "Beekeeping is one of the most cost-effective ways to maintain an agricultural valuation on your land. We manage the required hives and provide documentation for the appraisal district.",
+                    "Our specialized team understands the legal requirements and ensures your apiary stays compliant year-round."
+                ],
+                benefitsTitle: "Strategy & Compliance",
+                benefitsSubtitle: "Navigating the legalities of agricultural valuations.",
+                benefits: [
+                    { icon: 'clipboard-check', title: 'Compliance Auditing', desc: 'Ensure you meet all precise municipal and county hive-density requirements.' },
+                    { icon: 'file-spreadsheet', title: 'Full Documentation', desc: 'Annual reports and activity logs ready for your tax assessor submission.' },
+                    { icon: 'key', title: 'Lease Options', desc: 'We provide, own, and maintain the bees on your land under a lease agreement.' },
+                    { icon: 'trending-down', title: 'Tax Savings', desc: 'Potential to reduce local property taxes by up to 90% in qualified zones.' }
+                ],
+                ctaTitle: "Plan Your Exemption",
+                ctaDesc: "Schedule a consultation to assess your land's specific potential.",
+                pricing: [
+                    { title: "Setup (1-5 Acres)", price: "999", unit: " initial", desc: "Initial apiary installation and first year compliance filing.", active: true },
+                    { title: "Large Acreage Setup", price: "Custom", unit: "", desc: "Tailored management for properties over 10 acres.", active: false }
+                ]
+            }
+        };
+
+        function getServiceFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('service') || 'workshops';
+        }
+
+        function updatePage(serviceKey) {
+            const data = servicesData[serviceKey] || servicesData['workshops'];
+            
+            // Basic Info
+            document.title = `${data.title} - HiveMaster`;
+            document.getElementById('hero-title').textContent = data.title;
+            document.getElementById('hero-subtitle').textContent = data.subtitle;
+            document.getElementById('service-badge').textContent = data.badge;
+            document.getElementById('dynamic-header').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/service_detailsimg.png')`;
+            
+            // Section 2
+            document.getElementById('main-image').src = data.mainImage;
+            document.getElementById('main-image').alt = data.title;
+            document.getElementById('description-title').textContent = data.descTitle;
+            
+            const descContainer = document.getElementById('description-text');
+            descContainer.innerHTML = data.description.map(p => 
+                `<p class="card-desc" style="font-size: 1.125rem;">${p}</p>`
+            ).join('');
+
+            // Section 3
+            document.getElementById('benefits-title').textContent = data.benefitsTitle;
+            document.getElementById('benefits-subtitle').textContent = data.benefitsSubtitle;
+            
+            const benefitsGrid = document.getElementById('benefits-grid');
+            benefitsGrid.innerHTML = data.benefits.map(b => `
+                <div class="card" style="padding: 2rem;">
+                    <i data-lucide="${b.icon}" class="text-primary" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+                    <h3 class="card-title">${b.title}</h3>
+                    <p class="card-desc">${b.desc}</p>
+                </div>
+            `).join('');
+
+            // Section 4
+            document.getElementById('cta-title').textContent = data.ctaTitle;
+            document.getElementById('cta-desc').textContent = data.ctaDesc;
+            
+            const pricingCards = document.getElementById('pricing-cards');
+            pricingCards.innerHTML = data.pricing.map(p => `
+                <div class="card ${p.active ? 'bg-alt' : ''}" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 1.5rem; ${p.active ? 'border-color: var(--primary-color);' : ''}">
+                    <div>
+                        <h3 style="margin-bottom: 0.25rem;">${p.title}</h3>
+                        <p style="margin: 0; color: var(--text-muted);">${p.desc}</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span style="font-weight: bold; font-size: 1.5rem;">$${p.price}<span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">${p.unit}</span></span>
+                        <button class="btn ${p.active ? 'btn-primary' : 'btn-outline'}">Select</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-initialize Lucide icons
+            lucide.createIcons();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceKey = getServiceFromURL();
+            updatePage(serviceKey);
+        });
+    </script>
     <style>
         @media (max-width: 767px) {
-            .grid-cols-2 { grid-template-columns: 1fr; gap: 2rem; }
-            .flex-col > .card { flex-direction: column !important; align-items: flex-start !important; text-align: left; gap: 1rem; }
-            .flex-col > .card .flex { width: 100%; justify-content: space-between; }
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .flex-col>.card {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                text-align: left;
+                gap: 1rem;
+            }
+
+            .flex-col>.card .flex {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
     </style>
 </body>
+
 </html>
+
+

@@ -81,4 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
         });
     });
+
+    // 5. Cart Badge Updates
+    window.updateCartBadge = function() {
+        const cart = JSON.parse(localStorage.getItem('hivemaster_cart')) || [];
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        const badges = document.querySelectorAll('.cart-badge');
+        badges.forEach(badge => {
+            badge.textContent = count;
+            badge.style.display = count > 0 ? 'flex' : 'none';
+        });
+    };
+
+    updateCartBadge();
 });

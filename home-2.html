@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,54 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         /* Home 2 specific styles */
         .hero-2 {
             padding-block: 8rem 6rem;
-            background: linear-gradient(to right, var(--bg-color) 40%, var(--bg-alt) 40%);
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55)), url('assets/images/home2_imagebg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
         }
+
+        .hero-2 .hero-title,
+        .hero-2 .hero-subtitle {
+            text-align: left;
+            margin-inline: 0;
+            color: #fff;
+        }
+
+        .hero-2 .hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         [dir="rtl"] .hero-2 {
             background: linear-gradient(to left, var(--bg-color) 40%, var(--bg-alt) 40%);
         }
+
+        /* Responsive */
         @media (max-width: 991px) {
-            .hero-2 { background: var(--bg-alt); padding-block: 5rem; text-align: center; }
-            .hero-stats { justify-content: center; }
+            .hero-2 {
+                padding-block: 5rem;
+                text-align: center;
+                background-attachment: scroll;
+            }
+
+            .hero-2 .hero-title,
+            .hero-2 .hero-subtitle {
+                text-align: center;
+                margin-inline: auto;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
         }
+
         .stat-card {
             background-color: var(--card-bg);
             padding: 2rem;
@@ -31,6 +66,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -47,8 +83,8 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
@@ -56,16 +92,20 @@
 
             <!-- Actions -->
             <div class="nav-actions">
+                <div class="nav-auth flex items-center gap-2">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
                 <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="moon"></i>
                 </button>
                 <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
                     <i data-lucide="languages"></i>
                 </button>
-                <div class="nav-auth flex gap-4">
-                    <a href="login.html" class="btn btn-outline">Login</a>
-                    <a href="register.html" class="btn btn-primary">Sign Up</a>
-                </div>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -76,32 +116,31 @@
     </nav>
 
     <!-- Alternate Hero Section -->
-    <section class="hero-2">
+    <section class="hero-2"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('assets/images/home2_imagebg.png');">
         <div class="container">
-            <div class="grid grid-cols-2 items-center gap-8">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <div class="hero-content">
-                    <div style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.1); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem;">
+                    <div
+                        style="display:inline-block; padding:0.5rem 1rem; background:rgba(245, 158, 11, 0.2); color:var(--primary-color); border-radius:2rem; margin-bottom:1.5rem; font-weight:600; font-size:0.875rem; border: 1px solid rgba(245, 158, 11, 0.3);">
                         #1 Rated Beekeeping Platform
                     </div>
-                    <h1 class="hero-title">Elevate Your Apiary Management</h1>
-                    <p class="hero-subtitle">Pro-grade supplies and masterclass training designed for ambitious beekeepers aiming for maximum yield.</p>
-                    <div class="flex gap-4 hero-stats" style="margin-bottom:2.5rem;">
+                    <h1 class="hero-title" style="text-align:center; margin-inline:auto;">Elevate Your Apiary Management
+                    </h1>
+                    <p class="hero-subtitle" style="text-align:center; margin-inline:auto; max-width:600px;">Pro-grade
+                        supplies and masterclass training designed for ambitious
+                        beekeepers aiming for maximum yield.</p>
+                    <div class="flex gap-4 hero-stats" style="margin-bottom:2.5rem; justify-content:center;">
                         <div>
-                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); display:block;">15k+</span>
-                            <span style="color:var(--text-muted); font-size:0.875rem;">Active Users</span>
-                        </div>
-                        <div style="width:1px; background:var(--border-color); margin:0 1rem;"></div>
-                        <div>
-                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); display:block;">200+</span>
-                            <span style="color:var(--text-muted); font-size:0.875rem;">Video Classes</span>
+                            <span
+                                style="font-size:2rem; font-weight:800; color:var(--primary-color); display:block;">200+</span>
+                            <span style="color:rgba(255, 255, 255, 0.7); font-size:0.875rem;">Video Classes</span>
                         </div>
                     </div>
-                    <div class="hero-btns">
-                        <a href="services.html" class="btn btn-primary">Start Free Trial <i data-lucide="play-circle"></i></a>
+                    <div class="hero-btns" style="justify-content:center;">
+                        <a href="services.html" class="btn btn-primary">Start Free Trial <i
+                                data-lucide="play-circle"></i></a>
                     </div>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img src="https://placehold.co/800x800/e5e7eb/1f2937?text=Professional+Beekeeper+in+Action" alt="Professional Beekeeper" style="border-radius: 50% 50% 0 0; border: 8px solid var(--bg-color);">
                 </div>
             </div>
         </div>
@@ -112,26 +151,31 @@
         <div class="container">
             <div class="text-center" style="margin-bottom: 3rem;">
                 <h2 class="section-title">Trusted by Professionals Worldwide</h2>
-                <p class="section-subtitle">Our equipment and education is used in over 120 countries, turning hobbyists into commercial success stories.</p>
+                <p class="section-subtitle">Our equipment and education is used in over 120 countries, turning hobbyists
+                    into commercial success stories.</p>
             </div>
             <div class="card-grid cols-4">
                 <div class="stat-card">
-                    <i data-lucide="globe-2" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <i data-lucide="globe-2" class="text-primary"
+                        style="width:48px; height:48px; margin:0 auto 1rem;"></i>
                     <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">120+</h3>
                     <p style="margin:0; font-weight:500;">Countries Reached</p>
                 </div>
                 <div class="stat-card">
-                    <i data-lucide="award" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <i data-lucide="award" class="text-primary"
+                        style="width:48px; height:48px; margin:0 auto 1rem;"></i>
                     <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">50+</h3>
                     <p style="margin:0; font-weight:500;">Industry Awards</p>
                 </div>
                 <div class="stat-card">
-                    <i data-lucide="users-2" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <i data-lucide="users-2" class="text-primary"
+                        style="width:48px; height:48px; margin:0 auto 1rem;"></i>
                     <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">98%</h3>
                     <p style="margin:0; font-weight:500;">Customer Satisfaction</p>
                 </div>
                 <div class="stat-card">
-                    <i data-lucide="sprout" class="text-primary" style="width:48px; height:48px; margin:0 auto 1rem;"></i>
+                    <i data-lucide="sprout" class="text-primary"
+                        style="width:48px; height:48px; margin:0 auto 1rem;"></i>
                     <h3 style="font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;">5M+</h3>
                     <p style="margin:0; font-weight:500;">Bees Saved</p>
                 </div>
@@ -142,19 +186,20 @@
     <!-- Section 2: Best Sellers Preview (Different from Home 1 Categories) -->
     <section class="section-padding bg-alt">
         <div class="container">
-            <div class="flex items-center justify-between" style="margin-bottom: 3rem; flex-wrap:wrap; gap:1rem;">
-                <div>
-                    <h2 class="section-title" style="margin-bottom:0;">Trending Supplies</h2>
-                    <p class="section-subtitle" style="margin-bottom:0;">The most highly-rated equipment by our top apiarists.</p>
-                </div>
-                <a href="#" class="btn btn-outline">View Entire Store</a>
+            <div style="margin-bottom: 3rem; text-align: center;">
+                <h2 class="section-title" style="margin-bottom:0.5rem;">Trending Supplies</h2>
+                <p class="section-subtitle" style="margin-bottom:0; max-width: 600px; margin-inline: auto;">The most
+                    highly-rated equipment by our top
+                    apiarists.</p>
             </div>
             <!-- 4 Cards -->
             <div class="card-grid cols-4">
                 <div class="card">
                     <div class="card-img-wrapper" style="position:relative;">
-                        <span style="position:absolute; top:1rem; left:1rem; background:var(--primary-color); color:#fff; padding:0.25rem 0.75rem; border-radius:1rem; font-size:0.75rem; font-weight:bold; z-index:10;">Best Seller</span>
-                        <img src="https://placehold.co/400x400/fff/1f2937?text=Pro+Suit" alt="Ventilated Suit" class="card-img">
+                        <span
+                            style="position:absolute; top:1rem; left:1rem; background:var(--primary-color); color:#fff; padding:0.25rem 0.75rem; border-radius:1rem; font-size:0.75rem; font-weight:bold; z-index:10;">Best
+                            Seller</span>
+                        <img src="assets/images/Aero-Vent Pro Suit.png" alt="Ventilated Suit" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Aero-Vent Pro Suit</h3>
@@ -167,7 +212,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/400x400/fff/1f2937?text=Smoker" alt="Smoker" class="card-img">
+                        <img src="assets/images/categories/tools-smokers.png" alt="Smoker" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Stainless Steel Smoker</h3>
@@ -180,7 +225,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/400x400/fff/1f2937?text=Pine+Hive" alt="Pine Hive" class="card-img">
+                        <img src="assets/images/products/beehive-box.png" alt="Pine Hive" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">10-Frame Pine Hive Kit</h3>
@@ -193,7 +238,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="https://placehold.co/400x400/fff/1f2937?text=Hive+Tool" alt="Hive Tool" class="card-img">
+                        <img src="assets/images/J-Hook Hive Tool.png" alt="Hive Tool" class="card-img">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">J-Hook Hive Tool</h3>
@@ -212,36 +257,42 @@
     <section class="section-padding">
         <div class="container text-center">
             <h2 class="section-title">Learn from Master Apiarists</h2>
-            <p class="section-subtitle">Our instructors have decades of combined experience managing thousands of colonies.</p>
+            <p class="section-subtitle">Our instructors have decades of combined experience managing thousands of
+                colonies.</p>
             <div class="card-grid cols-3" style="text-align:left;">
                 <div class="card">
                     <div class="card-img-wrapper" style="aspect-ratio:1/1;">
-                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Dr.+Smith" alt="Mentor 1" class="card-img">
+                        <img src="assets/images/professional_men.png" alt="Dr. Jonathan Smith" class="card-img">
                     </div>
                     <div class="card-content text-center">
                         <h3 class="card-title">Dr. Jonathan Smith</h3>
-                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Entomologist & Master Beekeeper</p>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Entomologist &
+                            Master Beekeeper</p>
                         <p class="card-desc">Specializes in pest management and sustainable breeding techniques.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper" style="aspect-ratio:1/1;">
-                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Maria+Garcia" alt="Mentor 2" class="card-img">
+                        <img src="assets/images/professional_women.png" alt="Maria Garcia" class="card-img">
                     </div>
                     <div class="card-content text-center">
                         <h3 class="card-title">Maria Garcia</h3>
-                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Commercial Honey Producer</p>
-                        <p class="card-desc">Expert in large-scale apiary logistics and commercial pollination services.</p>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Commercial Honey
+                            Producer</p>
+                        <p class="card-desc">Expert in large-scale apiary logistics and commercial pollination services.
+                        </p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrapper" style="aspect-ratio:1/1;">
-                        <img src="https://placehold.co/500x500/f59e0b/1f2937?text=Lucas+Jensen" alt="Mentor 3" class="card-img">
+                        <img src="assets/images/professional_men2.png" alt="Lucas Jensen" class="card-img">
                     </div>
                     <div class="card-content text-center">
                         <h3 class="card-title">Lucas Jensen</h3>
-                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Urban Beekeeping Specialist</p>
-                        <p class="card-desc">Guiding city dwellers on establishing rooftop and backyard hives safely.</p>
+                        <p style="color:var(--primary-color); font-weight:500; margin-bottom:1rem;">Urban Beekeeping
+                            Specialist</p>
+                        <p class="card-desc">Guiding city dwellers on establishing rooftop and backyard hives safely.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -258,26 +309,31 @@
             <div class="flex flex-col gap-6">
                 <!-- Row Workshop -->
                 <div class="card" style="flex-direction:row; align-items:center; padding:1.5rem; gap:2rem;">
-                    <div style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
+                    <div
+                        style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
                         <span style="display:block; font-size:1.5rem; font-weight:bold;">12</span>
                         <span>May</span>
                     </div>
                     <div style="flex:1;">
-                        <h3 class="card-title" style="margin-bottom:0.25rem;">Preparing and Installing Your First Package</h3>
-                        <p class="card-desc" style="margin-bottom:0;">Instructor: Lucas Jensen  |  Duration: 90 mins</p>
+                        <h3 class="card-title" style="margin-bottom:0.25rem;">Preparing and Installing Your First
+                            Package</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Instructor: Lucas Jensen | Duration: 90 mins</p>
                     </div>
                     <div>
                         <a href="services.html" class="btn btn-outline">Register Now</a>
                     </div>
                 </div>
                 <div class="card" style="flex-direction:row; align-items:center; padding:1.5rem; gap:2rem;">
-                    <div style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
+                    <div
+                        style="background:var(--primary-color); color:#fff; padding:1rem; border-radius:var(--radius-md); text-align:center; min-width:100px;">
                         <span style="display:block; font-size:1.5rem; font-weight:bold;">25</span>
                         <span>May</span>
                     </div>
                     <div style="flex:1;">
-                        <h3 class="card-title" style="margin-bottom:0.25rem;">Varroa Mite: Identification and Treatment</h3>
-                        <p class="card-desc" style="margin-bottom:0;">Instructor: Dr. Jonathan Smith  |  Duration: 120 mins</p>
+                        <h3 class="card-title" style="margin-bottom:0.25rem;">Varroa Mite: Identification and Treatment
+                        </h3>
+                        <p class="card-desc" style="margin-bottom:0;">Instructor: Dr. Jonathan Smith | Duration: 120
+                            mins</p>
                     </div>
                     <div>
                         <a href="services.html" class="btn btn-outline">Register Now</a>
@@ -297,17 +353,22 @@
                 </div>
                 <div class="card-content" style="padding:4rem; text-align:center; position:relative; z-index:2;">
                     <h2 class="section-title">Join The Buzz Newsletter</h2>
-                    <p class="section-subtitle">Get monthly tips, seasonal checklists, and exclusive discounts straight to your inbox.</p>
-                    <form style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem;" onsubmit="event.preventDefault()">
+                    <p class="section-subtitle">Get monthly tips, seasonal checklists, and exclusive discounts straight
+                        to your inbox.</p>
+                    <form style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem;"
+                        onsubmit="event.preventDefault()">
                         <input type="email" placeholder="Enter your email address" required style="flex:1;">
                         <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
                     </form>
-                    <p style="font-size:0.875rem; color:var(--text-muted); margin-top:1rem;">We respect your inbox. No spam, just honey.</p>
+                    <p style="font-size:0.875rem; color:var(--text-muted); margin-top:1rem;">We respect your inbox. No
+                        spam, just honey.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -317,12 +378,44 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col footer-dark-text">
@@ -337,18 +430,21 @@
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Resources</h3>
                     <ul>
-                        <li><a href="blog.html">Blog & Guides</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Contact Us</h3>
                     <ul>
-                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
-                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
                     </ul>
                 </div>
             </div>
@@ -361,12 +457,19 @@
     <!-- CSS specifically for workshop mobile wrap -->
     <style>
         @media (max-width: 640px) {
-            .flex-col > .card { flex-direction: column !important; text-align: center; }
-            .flex-col > .card > div:first-child { width: 100%; }
+            .flex-col>.card {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .flex-col>.card>div:first-child {
+                width: 100%;
+            }
         }
     </style>
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

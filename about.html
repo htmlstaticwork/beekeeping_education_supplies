@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,41 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .page-header { background-color: var(--bg-alt); padding-block: 6rem 4rem; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .team-img { border-radius: 50%; aspect-ratio: 1/1; object-fit: cover; margin: 0 auto 1.5rem; max-width: 200px; }
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/about_image.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-block: 8rem 6rem;
+            text-align: center;
+            color: #fff;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .page-header .hero-title {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .team-img {
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            max-width: 200px;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -26,19 +56,27 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-icon dark-toggle"><i data-lucide="moon"></i></button>
-                <button class="btn-icon rtl-toggle"><i data-lucide="languages"></i></button>
-                <div class="nav-auth flex gap-4">
+                <div class="nav-auth flex items-center gap-2">
                     <a href="login.html" class="btn btn-outline">Login</a>
                     <a href="register.html" class="btn btn-primary">Sign Up</a>
                 </div>
+                <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn"><i data-lucide="menu"></i></button>
         </div>
@@ -53,10 +91,17 @@
     </header>
     <section class="section-padding">
         <div class="container">
-            <div class="grid grid-cols-2 items-center gap-8 text-center" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+            <div class="grid grid-cols-2 items-center gap-8 text-center"
+                style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
                 <h2 class="section-title">Rooted in Tradition, Driven by Science</h2>
-                <p class="card-desc" style="font-size: 1.125rem;">HiveMaster began as a small family-run apiary in the heart of Texas. Three generations later, we have grown into a globally recognized educational platform and supplier of premium beekeeping equipment. Our journey has always been guided by one principle: the health of the hive comes first.</p>
-                <p class="card-desc" style="font-size: 1.125rem;">We believe that comprehensive education paired with the right tools is the key to reversing global bee population decline. Whether you're a curious backyard hobbyist or managing a 500-colony commercial operation, we are here to support your success.</p>
+                <p class="card-desc" style="font-size: 1.125rem;">HiveMaster began as a small family-run apiary in the
+                    heart of Texas. Three generations later, we have grown into a globally recognized educational
+                    platform and supplier of premium beekeeping equipment. Our journey has always been guided by one
+                    principle: the health of the hive comes first.</p>
+                <p class="card-desc" style="font-size: 1.125rem;">We believe that comprehensive education paired with
+                    the right tools is the key to reversing global bee population decline. Whether you're a curious
+                    backyard hobbyist or managing a 500-colony commercial operation, we are here to support your
+                    success.</p>
             </div>
         </div>
     </section>
@@ -64,16 +109,36 @@
     <!-- Section 2: Mission & Vision -->
     <section class="section-padding bg-alt">
         <div class="container">
-            <div class="grid grid-cols-2 gap-8">
-                <div class="card" style="padding: 3rem;">
-                    <i data-lucide="target" style="width: 48px; height: 48px; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+            <div class="card-grid cols-2">
+                <div class="card text-center" style="padding: 3rem;">
+                    <i data-lucide="target"
+                        style="width: 48px; height: 48px; color: var(--primary-color); margin: 0 auto 1.5rem;"></i>
                     <h2 class="section-title" style="font-size: 1.75rem;">Our Mission</h2>
-                    <p class="card-desc" style="font-size: 1.125rem;">To empower individuals worldwide to become confident, responsible beekeepers by providing accessible education and state-of-the-art apiary supplies.</p>
+                    <p class="card-desc" style="font-size: 1.125rem;">To empower individuals worldwide to become
+                        confident, responsible beekeepers by providing accessible education and state-of-the-art apiary
+                        supplies.</p>
                 </div>
-                <div class="card" style="padding: 3rem;">
-                    <i data-lucide="eye" style="width: 48px; height: 48px; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                <div class="card text-center" style="padding: 3rem;">
+                    <i data-lucide="eye"
+                        style="width: 48px; height: 48px; color: var(--primary-color); margin: 0 auto 1.5rem;"></i>
                     <h2 class="section-title" style="font-size: 1.75rem;">Our Vision</h2>
-                    <p class="card-desc" style="font-size: 1.125rem;">A world where thriving honeybee populations sustainably support our ecosystems and global food supply, nurtured by knowledgeable apiarists.</p>
+                    <p class="card-desc" style="font-size: 1.125rem;">A world where thriving honeybee populations
+                        sustainably support our ecosystems and global food supply, nurtured by knowledgeable apiarists.
+                    </p>
+                </div>
+                <div class="card text-center" style="padding: 3rem;">
+                    <i data-lucide="shield-check"
+                        style="width: 48px; height: 48px; color: var(--primary-color); margin: 0 auto 1.5rem;"></i>
+                    <h2 class="section-title" style="font-size: 1.75rem;">Our Values</h2>
+                    <p class="card-desc" style="font-size: 1.125rem;">Integrity, transparency, and education form the
+                        core of our approach. We prioritize the welfare of bees over commercial gain.</p>
+                </div>
+                <div class="card text-center" style="padding: 3rem;">
+                    <i data-lucide="leaf"
+                        style="width: 48px; height: 48px; color: var(--primary-color); margin: 0 auto 1.5rem;"></i>
+                    <h2 class="section-title" style="font-size: 1.75rem;">Sustainability</h2>
+                    <p class="card-desc" style="font-size: 1.125rem;">We advocate for nature-first methodologies and
+                        ethical harvesting that ensures the long-term survival of honeybee colonies.</p>
                 </div>
             </div>
         </div>
@@ -87,22 +152,23 @@
             <!-- 4 Cards Layout -->
             <div class="card-grid cols-4">
                 <div class="card" style="padding: 2rem; border: none; box-shadow: none; background: transparent;">
-                    <img src="https://placehold.co/400x400/f59e0b/1f2937?text=CEO" alt="Founder" class="team-img">
+                    <img src="assets/images/professional_men_ceo.png" alt="Founder" class="team-img"
+                        style="object-position: top;">
                     <h3 class="card-title" style="margin-bottom: 0.25rem;">Marcus Reynolds</h3>
                     <p style="color: var(--primary-color); font-weight: 500;">Founder & CEO</p>
                 </div>
                 <div class="card" style="padding: 2rem; border: none; box-shadow: none; background: transparent;">
-                    <img src="https://placehold.co/400x400/f59e0b/1f2937?text=Ed" alt="Head Educator" class="team-img">
+                    <img src="assets/images/professional_women2.png" alt="Head Educator" class="team-img">
                     <h3 class="card-title" style="margin-bottom: 0.25rem;">Dr. Sarah Lin</h3>
                     <p style="color: var(--primary-color); font-weight: 500;">Head of Education</p>
                 </div>
                 <div class="card" style="padding: 2rem; border: none; box-shadow: none; background: transparent;">
-                    <img src="https://placehold.co/400x400/f59e0b/1f2937?text=Ops" alt="Operations" class="team-img">
+                    <img src="assets/images/professional_men_f.png" alt="Operations" class="team-img">
                     <h3 class="card-title" style="margin-bottom: 0.25rem;">James Peterson</h3>
                     <p style="color: var(--primary-color); font-weight: 500;">Director of Operations</p>
                 </div>
                 <div class="card" style="padding: 2rem; border: none; box-shadow: none; background: transparent;">
-                    <img src="https://placehold.co/400x400/f59e0b/1f2937?text=Comm" alt="Community" class="team-img">
+                    <img src="assets/images/professional_women3.png" alt="Community" class="team-img">
                     <h3 class="card-title" style="margin-bottom: 0.25rem;">Elena Rostova</h3>
                     <p style="color: var(--primary-color); font-weight: 500;">Community Manager</p>
                 </div>
@@ -113,30 +179,40 @@
     <!-- Section 4: Stats -->
     <section class="section-padding bg-alt">
         <div class="container text-center">
-            <div class="grid grid-cols-4 gap-4" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding-block: 4rem;">
+            <div class="grid grid-cols-4 gap-4"
+                style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding-block: 4rem;">
                 <div>
                     <h3 style="font-size: 3rem; color: var(--primary-color); font-weight: 800; line-height: 1;">25+</h3>
-                    <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">Years Experience</p>
+                    <p
+                        style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">
+                        Years Experience</p>
                 </div>
                 <div>
                     <h3 style="font-size: 3rem; color: var(--primary-color); font-weight: 800; line-height: 1;">10k</h3>
-                    <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">Students Certified</p>
+                    <p
+                        style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">
+                        Students Certified</p>
                 </div>
                 <div>
                     <h3 style="font-size: 3rem; color: var(--primary-color); font-weight: 800; line-height: 1;">5M</h3>
-                    <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">Bees Sold</p>
+                    <p
+                        style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">
+                        Bees Sold</p>
                 </div>
                 <div>
                     <h3 style="font-size: 3rem; color: var(--primary-color); font-weight: 800; line-height: 1;">4.9</h3>
-                    <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">Average Rating</p>
+                    <p
+                        style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 0.5rem;">
+                        Average Rating</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Exactly same footer contents as others. Simplifying for brevity without missing any details -->
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col" style="padding-right: 2rem;">
@@ -144,12 +220,44 @@
                         <i data-lucide="hexagon" class="logo-icon"></i>
                         <span>HiveMaster</span>
                     </a>
-                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers through comprehensive education and premium grade supplies.</p>
+                    <p class="footer-dark-text" style="color: #9ca3af;">Empowering the next generation of beekeepers
+                        through
+                        comprehensive education and premium grade supplies.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X" title="X (Formerly Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-x-brand">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-youtube">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                </path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col footer-dark-text">
@@ -164,18 +272,21 @@
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Resources</h3>
                     <ul>
-                        <li><a href="blog.html">Blog & Guides</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-dark-text">
                     <h3 class="footer-col-title">Contact Us</h3>
                     <ul>
-                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary Lane, TX</li>
-                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i> support@hivemaster.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px;"></i> 123 Apiary
+                            Lane, TX</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> +1 (555)
+                            123-4567</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;"></i>
+                            support@hivemaster.com</li>
                     </ul>
                 </div>
             </div>
@@ -189,8 +300,12 @@
     <script src="assets/js/main.js"></script>
     <style>
         @media (max-width: 767px) {
-            .grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+            .grid-cols-4 {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 2rem !important;
+            }
         }
     </style>
 </body>
+
 </html>
