@@ -180,6 +180,33 @@ p {
   justify-content: center;
 }
 
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cart-actions-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .section-header-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.25rem;
+  }
+
+  .cart-actions-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -228,10 +255,13 @@ p {
 }
 
 @media (max-width: 768px) {
-  .cta-btns-mobile {
+  .cta-btns-mobile,
+  .hero-btns {
     flex-direction: column !important;
   }
-  .cta-btns-mobile .btn {
+
+  .cta-btns-mobile .btn,
+  .hero-btns .btn {
     width: 100%;
   }
 }
@@ -453,12 +483,11 @@ p {
 }
 
 .navbar .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
   align-items: center;
-  justify-content: space-between;
   height: 80px;
-  padding-inline: 0.75rem;
-  /* Reduced from 1.5rem to move logo left */
+  padding-inline: 1.5rem;
 }
 
 .logo {
@@ -468,6 +497,7 @@ p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 200px; /* Locked width for centering and logo protection */
 }
 
 .logo-icon {
@@ -478,9 +508,17 @@ p {
 .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
-  /* Reduced from 2rem to ensure all links fit on one line */
   flex-wrap: nowrap;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: flex-end;
+  min-width: 200px; /* Match logo group for symmetry */
 }
 
 .nav-link {
@@ -557,8 +595,14 @@ p {
     /* hidden by default */
   }
 
+  .navbar .container {
+    grid-template-columns: 1fr auto;
+  }
+
   .mobile-menu-btn {
     display: block;
+    justify-self: end;
+    margin-inline-start: auto;
   }
 
   /* Mobile Menu Open State */
@@ -835,10 +879,22 @@ p {
 
   .footer-grid .logo {
     justify-content: center;
+    margin-inline: auto;
+    margin-bottom: 2rem;
   }
 
   .footer-socials {
     justify-content: center;
+  }
+
+  .footer-col {
+    padding-right: 0 !important;
+  }
+
+  .footer-dark-text {
+    margin-inline: auto;
+    max-width: 320px;
+    text-wrap: balance;
   }
 
   .footer-col ul li.flex {
@@ -969,6 +1025,107 @@ p {
 
 .btn-social:hover {
   background-color: var(--bg-alt);
+}
+
+/* Auth Actions (Toggles in top right) */
+.auth-actions {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+[dir="rtl"] .auth-actions {
+  right: auto;
+  left: 2rem;
+}
+
+/* Tablet: flow auth-actions inside the card at the top */
+@media (max-width: 768px) {
+  .auth-actions {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  [dir="rtl"] .auth-actions {
+    justify-content: flex-start;
+  }
+
+  .auth-container {
+    padding-top: 2rem;
+  }
+}
+
+/* Mobile 320px: float auth-actions above the card, fixed top-right */
+@media (max-width: 480px) {
+  .auth-actions {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    left: auto;
+    margin-bottom: 0;
+    z-index: 100;
+    background: transparent;
+  }
+
+  [dir="rtl"] .auth-actions {
+    right: auto;
+    left: 1rem;
+    justify-content: flex-start;
+  }
+
+  .auth-container {
+    padding-top: 5rem;
+  }
+
+  .auth-actions .btn-icon {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+  }
+}
+
+.auth-actions .btn-icon {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.auth-actions .btn-icon:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.auth-link {
+  transition: var(--transition);
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+  color: var(--primary-hover) !important;
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--primary-hover);
 }
 
 /* ==========================================================================

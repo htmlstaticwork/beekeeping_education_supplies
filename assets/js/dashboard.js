@@ -308,9 +308,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="color:var(--text-muted); margin:0;">Manage your profile, security, and preferences.</p>
                 </div>
 
-                <div class="grid grid-cols-3 gap-8">
-                    <div class="col-span-2" style="grid-column: span 2;">
-                        <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+                <div class="grid settings-grid gap-8">
+                    <div style="display: flex; flex-direction: column; gap: 2rem; width: 100%;">
+                        <div class="card" style="padding: 2rem;">
                             <h3 style="margin: 0 0 1.5rem; font-size: 1.25rem; color:var(--text-main); display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="user" style="width:20px;"></i> Profile Information</h3>
                             <div class="grid grid-cols-2 gap-6">
                                 <div>
@@ -326,28 +326,28 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <textarea style="width:100%; height:120px; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-alt); color: var(--text-main); font-family: inherit;">Hobbyist beekeeper with 3 years experience. Passionate about local conservation and sustainable honey production in the Pacific Northwest area.</textarea>
                                 </div>
                             </div>
-                            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                                <button class="btn btn-primary" style="padding: 0.75rem 2rem;">Save Changes</button>
-                                <button class="btn btn-outline" style="border-width: 1px;">Reset</button>
+                            <div class="settings-actions">
+                                <button class="btn btn-primary">Save Changes</button>
+                                <button class="btn btn-outline">Reset</button>
                             </div>
                         </div>
 
-                        <div class="card" style="padding: 1.5rem; max-width: 600px; height: fit-content;">
+                        <div class="card" style="padding: 2rem; height: auto;">
                             <h3 style="margin: 0 0 1rem; font-size: 1.125rem; color:var(--text-main); display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="shield-check" style="width:18px;"></i> Security & Privacy</h3>
                             <div class="flex flex-col gap-3">
-                                <div class="flex items-center justify-between" style="background: var(--bg-alt); border-radius: 10px; padding: 0.8rem 1.25rem;">
+                                <div class="settings-row">
                                     <div>
                                         <h4 style="margin:0; font-size: 0.9375rem;">Password</h4>
                                         <p style="margin:0; font-size: 0.8125rem; color:var(--text-muted);">Last changed 2 months ago</p>
                                     </div>
-                                    <button class="btn btn-outline" style="padding: 0.45rem 1.1rem; border-width: 1px; font-size: 0.8125rem;">Update</button>
+                                    <button class="btn btn-outline" style="border-width: 1px; font-size: 0.8125rem; padding: 0.5rem 1.25rem; min-width: 90px;">Update</button>
                                 </div>
-                                <div class="flex items-center justify-between" style="background: var(--bg-alt); border-radius: 10px; padding: 0.8rem 1.25rem;">
+                                <div class="settings-row">
                                     <div>
                                         <h4 style="margin:0; font-size: 0.9375rem;">Two-Factor Authentication</h4>
                                         <p style="margin:0; font-size: 0.8125rem; color:var(--text-muted);">Extra layer of account security</p>
                                     </div>
-                                    <button class="btn btn-primary" style="padding: 0.45rem 1.1rem; font-size: 0.8125rem;">Enable</button>
+                                    <button class="btn btn-primary" style="font-size: 0.8125rem; padding: 0.5rem 1.25rem; min-width: 90px;">Enable</button>
                                 </div>
                             </div>
                         </div>

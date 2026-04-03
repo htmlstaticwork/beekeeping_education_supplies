@@ -175,6 +175,123 @@
             width: 100%;
             justify-content: flex-start;
         }
+
+        .settings-grid {
+            grid-template-columns: 2fr 1fr;
+            align-items: start;
+        }
+
+        .settings-grid > * {
+            min-width: 0;
+        }
+
+        /* Mobile specific stacking for Settings */
+        .settings-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .settings-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-alt);
+            border-radius: 10px;
+            padding: 0.8rem 1.25rem;
+        }
+
+        @media (max-width: 1200px) {
+            .settings-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .settings-actions {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            .settings-actions .btn {
+                width: 100% !important;
+            }
+
+            .settings-row {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 1rem !important;
+                padding: 1rem !important;
+            }
+
+            .settings-row .btn {
+                width: 100% !important;
+            }
+
+            .dashboard-content {
+                padding: 1.25rem !important;
+            }
+
+            .card {
+                padding: 1.25rem !important;
+            }
+        }
+
+        /* Top Utilities Styling */
+        .top-utilities {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1.5rem 2rem 0;
+            gap: 15px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .utility-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        .utility-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            border-color: var(--primary-color);
+        }
+
+        .utility-btn i {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .top-utilities {
+                padding: 1rem 2rem 0;
+                gap: 10px;
+            }
+        }
+
+        /* Hover Effect for View All links */
+        .text-primary {
+            transition: var(--transition);
+        }
+
+        .text-primary:hover {
+            color: var(--primary-hover) !important;
+            text-decoration: underline !important;
+        }
     </style>
 </head>
 
@@ -212,20 +329,8 @@
                     Settings
                 </a>
 
-                <!-- Utilities -->
-                <div class="toggle-btn-container"
-                    style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                    <button class="sidebar-link dark-toggle"
-                        style="background:none; border:none; width:100%; text-align:left; color:var(--text-muted);">
-                        <i data-lucide="moon" style="width:20px;"></i> Dark Mode
-                    </button>
-                    <button class="sidebar-link rtl-toggle"
-                        style="background:none; border:none; width:100%; text-align:left; color:var(--text-muted);">
-                        <i data-lucide="languages" style="width:20px;"></i> Toggle RTL
-                    </button>
-                    <a href="cart.html" class="sidebar-link" style="color:var(--text-muted);">
-                        <i data-lucide="shopping-cart" style="width:20px;"></i> View Cart
-                    </a>
+                <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                    <!-- Logout can stay here or below -->
                 </div>
             </nav>
 
@@ -269,8 +374,21 @@
                     <li><a href="contact.html" class="nav-link" style="font-size: 0.9rem;">Contact</a></li>
                 </nav>
 
-                <!-- Right side actions removed for mobile/tab -->
+            <!-- Right side actions removed for mobile/tab -->
             </header>
+
+            <!-- Top persistent Utilities -->
+            <div class="top-utilities">
+                <button class="utility-btn dark-toggle" title="Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="utility-btn rtl-toggle" title="Toggle RTL">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="cart.html" class="utility-btn" title="View Cart">
+                    <i data-lucide="shopping-cart"></i>
+                </a>
+            </div>
 
             <!-- Dashboard Content -->
             <div class="dashboard-content" id="dashboardContent">
@@ -393,7 +511,8 @@
         @media (max-width: 1024px) {
             .grid-cols-4,
             .grid-cols-3,
-            .grid-cols-2 {
+            .grid-cols-2,
+            .settings-grid {
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }

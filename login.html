@@ -22,9 +22,19 @@
         <div class="auth-overlay"></div>
         <img src="https://placehold.co/1920x1080/f59e0b/1f2937?text=Honeycomb+Pattern" alt="Background" class="auth-bg">
 
+        <!-- Top Right Actions (outside card for mobile fixed positioning) -->
+        <div class="auth-actions">
+            <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
+                <i data-lucide="moon"></i>
+            </button>
+            <button class="btn-icon rtl-toggle" aria-label="Toggle RTL">
+                <i data-lucide="languages"></i>
+            </button>
+        </div>
+
         <div class="auth-card">
             <div class="auth-header">
-                <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 0.5rem; font-size: 2rem;">
+                <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 0.5rem; font-size: 2rem; width: 100% !important;">
                     <i data-lucide="hexagon" class="logo-icon" style="width: 32px; height: 32px;"></i>
                     <span>HiveMaster</span>
                 </a>
@@ -52,7 +62,7 @@
                         <input type="checkbox" style="width: auto; margin: 0;">
                         <span style="color: var(--text-muted); font-weight: 500;">Remember me</span>
                     </label>
-                    <a href="#" class="text-primary" style="font-weight: 500;">Forgot Password?</a>
+                    <a href="#" class="text-primary auth-link" style="font-weight: 500;">Forgot Password?</a>
                 </div>
 
                 <div class="auth-form-group">
@@ -76,7 +86,7 @@
             </div>
             
             <p class="text-center" style="margin-top: 2rem; color: var(--text-muted);">
-                Don't have an account? <a href="register.html" class="text-primary" style="font-weight: 600;">Sign up</a>
+                Don't have an account? <a href="register.html" class="text-primary auth-link" style="font-weight: 600;">Sign up</a>
             </p>
 
 

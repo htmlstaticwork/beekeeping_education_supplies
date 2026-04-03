@@ -122,7 +122,7 @@
             margin-bottom: 1.5rem;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 1024px) {
             .cart-layout {
                 grid-template-columns: 1fr;
             }
@@ -154,6 +154,25 @@
 
             .cart-item-info {
                 width: 100%;
+                justify-content: flex-end;
+            }
+
+            @media (max-width: 480px) {
+                .cart-item-info {
+                    flex-direction: column;
+                    align-items: flex-end !important;
+                    text-align: right;
+                    gap: 0.5rem;
+                }
+
+                .cart-item-img {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .cart-item-name {
+                    font-size: 1rem;
+                }
             }
         }
     </style>
@@ -194,7 +213,6 @@
                 </li>
                 <li class="nav-auth-mobile mobile-only">
                     <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
-                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
                 </li>
             </ul>
 
@@ -202,7 +220,6 @@
             <div class="nav-actions">
                 <div class="nav-auth flex items-center gap-2">
                     <a href="login.html" class="btn btn-outline">Login</a>
-                    <a href="register.html" class="btn btn-primary">Sign Up</a>
                 </div>
                 <button class="btn-icon dark-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="moon"></i>
@@ -254,7 +271,7 @@
                         </tbody>
                     </table>
 
-                    <div class="flex justify-between mt-8">
+                    <div class="cart-actions-flex mt-8">
                         <a href="shop.html" class="btn btn-outline"><i data-lucide="arrow-left"></i> Continue
                             Shopping</a>
                         <button class="btn btn-outline" id="clearCartBtn"
@@ -298,7 +315,7 @@
     <!-- Recommended Supplies Section -->
     <section class="section-padding bg-alt" style="border-top: 1px solid var(--border-color);">
         <div class="container">
-            <div class="flex justify-between items-end" style="margin-bottom: 3rem;">
+            <div class="section-header-flex" style="margin-bottom: 3rem;">
                 <div>
                     <h2 class="section-title" style="margin-bottom: 0.5rem;">Recommended Supplies</h2>
                     <p class="section-subtitle" style="margin-bottom: 0;">Essential gear picked for your apiary needs.
@@ -363,7 +380,7 @@
     <!-- Popular Courses Section -->
     <section class="section-padding">
         <div class="container">
-            <div class="flex justify-between items-end" style="margin-bottom: 3rem;">
+            <div class="section-header-flex" style="margin-bottom: 3rem;">
                 <div>
                     <h2 class="section-title" style="margin-bottom: 0.5rem;">Learn More with Our Courses</h2>
                     <p class="section-subtitle" style="margin-bottom: 0;">Master the art of beekeeping with expert-led
