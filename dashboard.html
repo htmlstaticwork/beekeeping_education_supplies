@@ -249,9 +249,16 @@
             z-index: 20;
         }
 
+        .header-utilities {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
         .utility-btn {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -272,14 +279,19 @@
         }
 
         .utility-btn i {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1023px) {
+            .header-utilities {
+                display: flex;
+            }
             .top-utilities {
-                padding: 1rem 2rem 0;
-                gap: 10px;
+                display: none;
+            }
+            .dashboard-header {
+                padding: 0 1.25rem;
             }
         }
 
@@ -291,6 +303,11 @@
         .text-primary:hover {
             color: var(--primary-hover) !important;
             text-decoration: underline !important;
+        }
+
+        /* Logout button text color in dark mode */
+        .dark #logoutBtn {
+            color: #fff !important;
         }
     </style>
 </head>
@@ -347,7 +364,7 @@
                 </div>
                 <!-- Logout redirects to Home -->
                 <button id="logoutBtn" class="btn btn-outline"
-                    style="width:100%; border-color:var(--border-color); color:var(--text-muted); justify-content:center;">
+                    style="width:100%; justify-content:center; border-color:var(--border-color);">
                     <i data-lucide="log-out" style="width:16px;"></i> Logout
                 </button>
             </div>
@@ -357,10 +374,23 @@
         <main class="dashboard-main">
             <!-- Top Header -->
             <header class="dashboard-header">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4" style="min-width: 0; flex: 1;">
                     <button class="btn-icon lg:hidden" id="dashboardMenuBtn" aria-label="Toggle Sidebar"><i
                             data-lucide="menu"></i></button>
-                    <h2 id="dashboardTitle" style="margin: 0; font-size: 1.25rem;">Dashboard Overview</h2>
+                    <h2 id="dashboardTitle" style="margin: 0; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Dashboard Overview</h2>
+                </div>
+
+                <!-- Utilities for Mobile Header -->
+                <div class="header-utilities">
+                    <button class="utility-btn dark-toggle" title="Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="utility-btn rtl-toggle" title="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                    <a href="cart.html" class="utility-btn" title="View Cart">
+                        <i data-lucide="shopping-cart"></i>
+                    </a>
                 </div>
 
                 <!-- Center Links (Hidden on small screens) -->
