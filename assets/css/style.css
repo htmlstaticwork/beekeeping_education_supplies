@@ -1042,51 +1042,43 @@ p {
   left: 2rem;
 }
 
-/* Tablet: flow auth-actions inside the card at the top */
-@media (max-width: 768px) {
+/* Tablet: position buttons vertically above the card */
+@media (max-width: 991px) {
   .auth-actions {
-    position: static;
-    display: flex;
-    justify-content: flex-end;
+    position: static !important;
+    display: flex !important;
+    justify-content: flex-end !important;
     gap: 0.75rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem !important;
+    width: 100%;
+    max-width: 480px;
+    z-index: 10;
   }
 
   [dir="rtl"] .auth-actions {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
   }
 
   .auth-container {
-    padding-top: 2rem;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 3rem 1rem !important;
+  }
+
+  .auth-card {
+    margin-top: 0;
   }
 }
 
-/* Mobile 320px: float auth-actions above the card, fixed top-right */
+/* Mobile 320px: specific refinements if needed */
 @media (max-width: 480px) {
   .auth-actions {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    left: auto;
-    margin-bottom: 0;
-    z-index: 100;
-    background: transparent;
-  }
-
-  [dir="rtl"] .auth-actions {
-    right: auto;
-    left: 1rem;
-    justify-content: flex-start;
+    max-width: 100%;
+    padding-inline: 1rem;
   }
 
   .auth-container {
-    padding-top: 5rem;
-  }
-
-  .auth-actions .btn-icon {
-    background-color: var(--card-bg);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
+    padding: 2rem 1rem !important;
   }
 }
 
