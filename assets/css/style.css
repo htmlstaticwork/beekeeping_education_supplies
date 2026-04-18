@@ -32,15 +32,16 @@
 
 /* Dark Mode Variables */
 .dark {
-  --bg-color: #111827;
-  --bg-alt: #1f2937;
-  --text-main: #f9fafb;
-  --text-muted: #9ca3af;
-  --border-color: #374151;
-  --card-bg: #1f2937;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+  --bg-color: #000000;
+  --bg-alt: #0a0a0a;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --border-color: #262626;
+  --card-bg: #111111;
+  --secondary-color: #050505;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.7);
 }
 
 /* ==========================================================================
@@ -255,6 +256,7 @@ p {
 }
 
 @media (max-width: 768px) {
+
   .cta-btns-mobile,
   .hero-btns {
     flex-direction: column !important;
@@ -395,18 +397,31 @@ p {
   color: #fff;
 }
 
-.btn-icon {
-  display: flex;
+/* Icon Button consistency */
+.btn-icon, .cart-btn {
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   color: var(--text-main);
   background-color: var(--bg-alt);
+  transition: var(--transition);
+  padding: 0;
+  border: 1px solid var(--border-color);
 }
 
-.btn-icon:hover {
+.btn-icon:hover, .cart-btn:hover {
   background-color: var(--border-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.btn-icon i, .cart-btn i {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 /* ==========================================================================
@@ -496,12 +511,19 @@ p {
   color: var(--text-main);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  width: 200px; /* Locked width for centering and logo protection */
+  gap: 0.75rem;
+  width: 220px;
+}
+
+/* RTL Logo Design Change: Mirror the layout */
+[dir="rtl"] .logo {
+  flex-direction: row; /* Flex row in RTL naturally puts 1st item on right */
 }
 
 .logo-icon {
   color: var(--primary-color);
+  width: 32px;
+  height: 32px;
 }
 
 /* Desktop Menu */
@@ -518,7 +540,8 @@ p {
   align-items: center;
   gap: 1.25rem;
   justify-content: flex-end;
-  min-width: 200px; /* Match logo group for symmetry */
+  min-width: 200px;
+  /* Match logo group for symmetry */
 }
 
 .nav-link {
@@ -548,28 +571,15 @@ p {
 
 .cart-btn {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-alt);
-  color: var(--text-main);
-  padding: 0.6rem;
-  border-radius: 50%;
-  transition: var(--transition);
-}
-
-.cart-btn:hover {
-  background-color: var(--border-color);
-  color: var(--primary-color);
 }
 
 .cart-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -2px;
+  right: -2px;
   background-color: var(--primary-color);
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   width: 18px;
   height: 18px;
@@ -580,10 +590,27 @@ p {
   border: 2px solid var(--bg-color);
 }
 
+[dir="rtl"] .cart-badge {
+  right: auto;
+  left: -2px;
+}
+
 .mobile-menu-btn {
   display: none;
-  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   color: var(--text-main);
+  background-color: var(--bg-alt);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.mobile-menu-btn i {
+  width: 20px;
+  height: 20px;
 }
 
 /* Mobile Menu */

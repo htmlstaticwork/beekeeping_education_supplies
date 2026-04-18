@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <div class="grid grid-cols-3 gap-6">
                     <div class="card" style="overflow:hidden; height: auto;">
-                        <img src="assets/images/courses/beginner.png" style="width:100%; height:180px; object-fit:cover;">
+                        <img src="assets/images/Intro to Hive Anatomy.png" alt="Intro to Hive Anatomy" style="width:100%; height:180px; object-fit:cover; object-position: center top;">
                         <div style="padding:1.5rem;">
                             <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary-color); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block;">Beginner</span>
                             <h4 style="margin:0 0 0.75rem; color:var(--text-main); font-size: 1.125rem;">Intro to Hive Anatomy</h4>
