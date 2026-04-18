@@ -338,8 +338,8 @@ p {
   }
 }
 
-/* Wide Desktop (1400px and up) */
-@media (min-width: 1400px) {
+/* Wide Desktop (1200px and up) */
+@media (min-width: 1200px) {
   .cols-desktop-4 {
     grid-template-columns: repeat(4, 1fr) !important;
   }
@@ -348,12 +348,21 @@ p {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 
-  /* Reset centering logic for desktop if it goes to 3 columns */
-  .cols-desktop-3.grid-3-centered>*:last-child:nth-child(3) {
-    grid-column: auto;
-    justify-self: stretch;
-    width: auto;
+  .cols-desktop-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  /* Reset centering logic for desktop if it goes to 3 or 4 columns */
+  .grid-3-centered>*:last-child:nth-child(3) {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    width: auto !important;
+  }
+}
+
+/* Extra Wide Desktop (1400px and up) - Optional refinements */
+@media (min-width: 1400px) {
+  /* Already handled by 1200px block above, but keeping for specificity if needed */
 }
 
 
@@ -1249,19 +1258,6 @@ p {
   .dashboard-main {
     margin-inline-start: 0;
   }
-}
-
-/* ==========================================================================
-   RTL Styles specific manual overrides (Logical props handle most!)
-   ========================================================================== */
-[dir="rtl"] .nav-actions .btn-icon {
-  transform: scaleX(-1);
-}
-
-[dir="rtl"] .lucide {
-  /* Prevent flipping of specific icons if needed, but usually fine */
-}
-}
 }
 
 /* ==========================================================================
